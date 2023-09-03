@@ -1,0 +1,22 @@
+body {
+  background-color: whitesmoke;
+}
+h1 {
+  color: darkgreen;
+  font-family: courier;
+  font-size: 100px;
+}
+p {
+  color: darkgreen;
+  font-family: courier;
+  font-size: 50px;
+  text-align: center;
+  border: 2px solid darkgreen;
+  padding: 30px;
+}
+a {
+  color: blue;
+  font-family: courier;
+  font-size: 75px;
+  text-align: center;
+}
