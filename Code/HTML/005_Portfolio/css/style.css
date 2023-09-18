@@ -1,23 +1,31 @@
+/* Written By Adrian H. Evjeberg */
+/* Base */
+
 @import url(https://fonts.googleapis.com/css?family=Poppins);
+@import url(https://fonts.googleapis.com/css?family=Playfair+Display);
 :root {
-    --primaryWhite: #EDF2F4;
-    --primaryDark: #212529;
-    --secondaryDark: #6D6D6D;
-    --primaryRed: #EF233C;
-    --secondaryRed: #D90429;
+    --priWhite: #DDDDDD;
+    --priNavy: #19427D;
+    --priDark: #041128;
+    --accent1Sky: #7AA8C4;
+    --accent2Noir: #232A2F;
 }
 
 * {padding: 0; margin: 0;}
 
 body {
-    background-color: var(--primaryDark);
+    background-color: var(--accent2Noir);
+    height: 100vh;
+    width: 100vw;
+    margin: 0rem;
+    overflow: hidden;
 }
+
+
+/* NAVIGATION */
 
 .nav {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 1rem;
     margin-left: 1.5rem;
     margin-right: 1.5rem;
 }
@@ -25,44 +33,52 @@ body {
 .nav a {
     display: block;
     padding: 1em;
-    color: var(--secondaryDark);
+    color: var(--priWhite);
     text-decoration: none;
     text-align: center;
     font-size: 17px;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Playfair Display', sans-serif;
     font-weight: bold;
     transition: color .2s ease-out;
     transition: text-shadow .2s ease-out;
 }
 
 .nav a:hover {
-    color: var(--primaryWhite);
+    color: var(--priWhite);
     text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff;
     transition: color .2s ease-in;
     transition: text-shadow .2s ease-in;
     font-weight: light;
 }
 
-@media all and (max-width: 990px) {
-    .nav {
-    flex-direction: column;
-    }
+#n_logo-wrapper {
+    margin-right: auto;
 }
 
-.logo-wrapper {
-    display: block;
-    align-items: flex-start;
-}
-
-.m-nav-wrapper {
+#n_nav-wrapper {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
+    align-items: center; 
+    margin-left: auto;
 }
 
-.nav-contact {
+
+/* MAIN */
+
+.main {
     display: block;
-    align-items: flex-end;
-    border: 1rem;
-    border-radius: 50px;
-    border: 2px solid var(--primaryRed);
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+}
+
+#m_title-wrapper h1 {
+    display: block;
+    font-family: 'Playfair Display', sans-serif;
+    color: var(--priWhite);
+}
+
+#m_info-wrapper p {
+    display: block;
+    font-family: 'Poppins', sans-serif;
+    color: var(--priWhite);
 }
