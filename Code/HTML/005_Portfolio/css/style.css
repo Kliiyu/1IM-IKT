@@ -106,6 +106,21 @@ body {
     margin-right: 1.5rem;
 }
 
+.m-top {
+    display: flex;
+}
+
+#m_video-wrapper {
+    display: block;
+    background-color: white;
+    opacity: .5;
+    width: 2fr;
+}
+
+.m-top-side {
+    width: 1fr;
+}
+
 #m_title-wrapper h1 {
     display: block;
     float: center;
