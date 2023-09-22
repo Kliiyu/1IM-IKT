@@ -75,6 +75,7 @@ body {
 #n_nav-wrapper {
     display: flex;
     justify-content: flex-end;
+    float: right;
     align-items: center; 
     margin-left: auto;
 }
@@ -111,19 +112,21 @@ body {
 }
 
 #m_video-wrapper {
-    display: block;
-    background-color: white;
-    opacity: .5;
+    display: flex;
     width: 2fr;
 }
 
 .m-top-side {
     width: 1fr;
+    text-align: center;
+    margin-left: 2rem;
+    margin-right: 2rem;
 }
 
 #m_title-wrapper h1 {
     display: block;
     float: center;
+    margin: .2rem;
     font-family: 'Playfair Display', sans-serif;
     color: var(--priWhite);
 }
@@ -131,6 +134,7 @@ body {
 #m_info-wrapper p {
     display: block;
     float: center;
+    margin: .2rem;
     font-family: 'Poppins', sans-serif;
     color: var(--priWhite);
 }
@@ -170,4 +174,43 @@ body {
 .ig-card-big {
     grid-row: span 2 / auto;
     grid-column: span 3 /auto;
+}
+
+
+/* Contact Page */
+
+#contact-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#contact-container h1 {
+    color: var(--priWhite);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    padding: 2vw 4vw;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 10px;
+    background-color: var(--priWhite);
+}
+
+form h1 {
+    color: var(--accent2Noir);
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+form input, form textarea {
+    border: 0;
+    margin: 10px 0;
+    padding: 20px;
+    outline: none;
+    font-size: 16px;
 }
