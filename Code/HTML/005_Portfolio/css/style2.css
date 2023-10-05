@@ -250,10 +250,12 @@ body {
 }
 
 #sect3-wrapper {
-    position: absolute;
+    display: grid;
+    width: 100vw;
+    height: 100vh;
     text-align: center;
-    top: 50%;
-    left: 48%;
+    justify-content: center;
+    align-items: center;
 }
 
 #toptext-wrapper {
@@ -261,24 +263,50 @@ body {
     text-align: center;
     color: var(--priWhite);
     font-family: 'Gabarito', 'sans-serif';
+    font-size: x-large;
 }
 
 #quickview-work {
-    display: block;
+    display: flex;
+    text-align: center;
+}
+
+#quickview-work figcaption {
+    text-decoration: none;
+    font-family: 'Gabarito', 'sans-serif';
+    color: var(--priWhite);
+}
+
+#quickview-work img {
+    display: inline-block;
+    margin: 1rem;
+    margin-bottom: 2px;
+    width: 25vw;
+    height: auto;
+    border-radius: 3px;
+    filter: brightness(0.9);
+    transition: all .5s ease-in-out;
+}
+
+#quickview-work img:hover {
+    filter: brightness(1.05);
+    transition: all .5s ease-in-out;
 }
 
 #view-more-btn a {
     display: block;
     text-decoration: none;
+    text-align: center;
     color: var(--priWhite);
     font-family: 'Gabarito', 'sans-serif';
     opacity: .7;
-    transition: opacity .5s ease-in-out;
+    transition: all .3s ease-in-out;
 }
 
 #view-more-btn a:hover {
     opacity: 1;
-    transition: opacity .5s ease-in-out;
+    font-size: larger;
+    transition: all .3s ease-in-out;
 }
 
 
