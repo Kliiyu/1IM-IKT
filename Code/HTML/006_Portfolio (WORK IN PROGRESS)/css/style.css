@@ -1,0 +1,181 @@
+/* Written By Adrian H. Evjeberg */
+/* Base */
+
+@import url(https://fonts.googleapis.com/css?family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap);
+:root {
+    --bgColor: #560D0D;
+}
+
+* {padding: 0; margin: 0;}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Hiding scrollbar for Chrome, Safari and Opera */
+body::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hiding scrollbar for IE, Edge and Firefox */
+body {
+    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+
+    background-color: var(--bgColor);
+    
+    min-height: 100vh;
+    width: 100vw;
+    margin: 0rem;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+/* INDEX */
+/* SECTION 1 */
+
+#logo-wrapper {
+    position: absolute;
+    top: 9%;
+    left: 20%;
+    z-index: 2;
+    transition: all 0.3s ease-in-out;
+}
+
+#logo-wrapper:hover {
+    top: 8%;
+    transition: all 0.3s ease-in-out;
+}
+
+#creative-wrapper {
+    position: absolute;
+    font-size: 130px;
+    color: #FFFFFF;
+    z-index: 2;
+    top: 13%;
+    right: 47%;
+    transition: all 0.3s ease-in-out;
+}
+
+#creative-wrapper:hover {
+    right: 46%;
+    transition: all 0.3s ease-in-out;
+}
+
+#creative-wrapper h1 {
+    font-family: 'Playfair Display', sans-serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+#designer1 {
+    position: absolute;
+    font-family: 'Playfair Display', sans-serif;
+    font-weight: 800;
+    font-size: 200px;
+    color: #FFFFFF;
+    z-index: 2;
+    top: 30%;
+    right: 37%;
+    transition: all 0.3s ease-in-out;
+}
+
+#designer1:hover {
+    right: 36%;
+    transition: all 0.3s ease-in-out;
+}
+
+#designer2 {
+    position: absolute;
+    font-family: 'Playfair Display', sans-serif;
+    font-weight: 800;
+    font-size: 200px;
+    color: #D1D1D1;
+    opacity: 0.3;
+    transform: scale(1, -1);
+    z-index: 1;
+    top: 40%;
+    right: 37%;
+}
+
+#border-box {
+    display: block;
+    position: absolute;
+    width: 97%;
+    height: 95%;
+    margin: 1rem;
+    border: 2px solid whitesmoke;
+    padding: .5rem;
+    z-index: -8;
+}
+
+#bg-text1 {
+    display: block;
+    position: absolute;
+    color: gray;
+    opacity: .3;
+    width: 97%;
+    height: 95%;
+    margin: 1rem;
+    border: 2px solid whitesmoke;
+    padding: .5rem;
+    overflow: hidden;
+    z-index: -10;
+    font-size: 12px;
+}
+
+#image-wrapper img {
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: auto;
+    left: 58%;
+    bottom: -4rem;
+    filter: grayscale(25%);
+    transition: all 0.3s ease-in-out;
+}
+
+#image-wrapper img:hover {
+    filter: grayscale(0%);
+    transition: all 0.3s ease-in-out;
+}
+
+#scroll-wrapper {
+    display: block;
+    position: absolute;
+    top: 88%;
+    left: 25%;
+    text-align: center;
+    color: whitesmoke;
+    font-family: 'Playfair Display', sans-serif;
+    transition: top .2s ease-in-out;
+    z-index: 2;
+}
+
+#scroll-wrapper img {
+    margin: .2rem;
+    height: 48px;
+    width: auto;
+}
+
+#scroll-wrapper:hover {
+    top: 87%;
+    transition: top .2s ease-in-out;
+}
+
+
+/* SECTION 2 */
+
+#sect2-wrapper {
+    display: block;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 100vh;
+    background-color: whitesmoke;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
