@@ -26,90 +26,170 @@
             <li><a href="menu.html">Menu</a></li>
             <li><a href="booking.html">Find a Table</a></li>
         </ul>
+        <div class="toggle-btn">
+            <img src="images/icons/bars-solid-white.png" class="navBars">
+            <img src="images/icons/bars-solid-black.png" class="navBarsCH">
+        </div>
     </header>
-    <section class="banner"></section>
-    <div id="scroll-wrapper" class="hidden fade-top">
-        <h5>Scroll down for more</h3>
-        <a href="#section-2"><img src="images/icons/arrow-down.png" alt="scroll icon"></a>
-    </div>
+    <section class="banner">
+        <div id="scroll-wrapper" class="hidden fade-top">
+            <h5>Scroll down for more</h3>
+            <a href="#section-2"><img src="images/icons/arrow-down.png" alt="scroll icon"></a>
+        </div>
+    </section>
 
     <main>
-
-        <section id="section-2"></section>
-        <div class="about-wrapper">
-            <div class="a-left-wrapper">
-                <h3 class="hidden fade-left">About Us</h3>
-                <p class="hidden fade-left">
-                    At Velvet Whisker, we believe that animals deserve a dining experience that is as elegant and delightful as it is for their human companions. Situated in the heart of [Location], our restaurant is a haven for animal lovers, providing a unique and enchanting environment where pets and their owners can share memorable culinary moments.
+        <section id="section-2"> <!--About us-->
+            <img src="images/logo/VelvetWhiskerLogo.png" alt="logo" class="logo-main hidden fade-top">
+            <div class="about-wrapper">
+                <div class="a-left-wrapper">
+                    <h3 class="hidden fade-left">About Us</h3>
+                    <p class="hidden fade-left">
+                        At <span class="menu-tag">Velvet Whisker</span>, we believe that animals deserve a dining experience that is as <span class="menu-tag">elegant and delightful</span> as it is for their human companions. Situated in the heart of <a href="#section-3" style="text-decoration: none; font-weight: 700;" class="menu-tag">Easter Island</a>, our restaurant is a haven for animal lovers, providing a unique and enchanting environment where pets and their owners can share <span class="menu-tag">memorable culinary moments</span>.
+                        <br><br>
+                        With a deep appreciation for the bond between humans and animals, we have created <span class="menu-tag">Velvet Whisker</span> to be a safe and inviting space for all creatures great and small. Our utmost commitment is to offer the <span class="menu-tag">highest quality</span> of service and delectable dishes that satisfy both the discerning palates of animals and the expectations of their human counterparts.
+                    </p>
+                </div>
+                <div class="a-right-wrapper">
+                    <img src="images/misc/deer.jpg" alt="deer" class="hidden fade-left">
+                    <img src="images/misc/parrot.jpg" alt="parrot" class="hidden fade-top">
+                    <img src="images/misc/tiger.jpg" alt="tiger" class="hidden fade-right">
+                </div>
+            </div>
+        </section>
+        
+        <section id="section-3"> <!--Location and Opening times-->
+            <div class="sect3-wrapper">
+                <div class="location-info hidden fade-left">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d113638.88221431026!2d-109.36490722929695!3d-27.118035124402823!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9947f017a8d4ae2b%3A0xbbe5b3edc02a2db6!2zUMOlc2tlw7h5YQ!5e0!3m2!1sno!2sno!4v1698084126005!5m2!1sno!2sno" 
+                        width="600" 
+                        height="450" 
+                        style="border:0; border-radius: 10px;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                <div class="opening-times">
+                    <img src="images/logo/VelvetWhiskerLogoWhite.png" alt="white logo" class="hidden fade-top">
+                    <h3 class="hidden fade-top">Isla de Pascua, <span class="menu-tag">Easter Island</span>, Valparaíso, Chile</h3>
                     <br><br>
-                    With a deep appreciation for the bond between humans and animals, we have created Velvet Whisker to be a safe and inviting space for all creatures great and small. Our utmost commitment is to offer the highest quality of service and delectable dishes that satisfy both the discerning palates of animals and the expectations of their human counterparts.
-                </p>
-            </div>
-            <div class="a-right-wrapper hidden fade-bottom">
-                <img src="images/misc/parrot.jpg" alt="parrot">
-            </div>
-        </div>
-
-        <img src="images/logo/VelvetWhiskerLogo.png" alt="logo" class="logo-main hidden fade-top">
-        <div class="menu-i-wrapper">
-            <div class="menu-rec-wrapper">
-                <img src="images/misc/wine.jpg" alt="wine" class="menu-rec-img hidden fade-left">
-                <div class="todays hidden fade-left">
-                    <h3>Today's Special</h3>
-                    <p>
-                        <span class="item-number">004</span> Turkey Roulade with Pumpkin Purée <br> and Spinach Coulis & Chicken & <br>
-                        <span class="item-number">013</span> Turmeric Tonic <br> <br>
-                        <span class="pricetag">$21.98</span>
-                    </p>
+                    <table class="hidden fade-bottom">
+                        <tr><th>Monday </th><td> 16:00 - 00:00</td></tr>
+                        <tr><th>Tuesday </th><td> 16:00 - 00:00</td></tr>
+                        <tr><th>Wednesday </th><td> 16:00 - 00:00</td></tr>
+                        <tr><th>Thursday </th><td> 16:00 - 00:00</td></tr>
+                        <tr><th>Friday </th><td> 16:00 - 02:00</td></tr>
+                        <tr><th>Saturday </th><td> 15:00 - 03:00</td></tr>
+                        <tr><th>Sunday </th><td> 15:00 - 00:00</td></tr>
+                    </table>
                 </div>
-                <div class="chefs hidden fade-right">
-                    <h3>Chef's Recommendation</h3>
-                    <p>
-                        <span class="item-number">010 <span class="signature-tag">signature</span></span> Royal Wagyu Filet Mignon & <br>
-                        <span class="item-number">025</span> Purrsecco Bubbly <br> <br>
-                        <span class="pricetag">$33.98</span>
-                    </p>
-                </div>
-                <img src="images/misc/meat.jpg" alt="meat" class="menu-rec-img hidden fade-right">
             </div>
-            <a href="menu.html" class="menu-button hidden fade-bottom">Check out the <span class="menu-tag">Menu</span> for more</a>
-            <img src="images/misc/pawline.png" alt="break" class="break hidden fade-bottom">
-        </div>
+        </section>
 
         <section id="banner-2"><h1 class="info-header hidden fade-bottom">Indulge in Gourmet Delights Tailored for Animals</h1></section>
 
-        <div class="about-wrapper-2">
-            <div class="a-middle-wrapper text-allign-center">
-                <h3 class="hidden fade-top">Pet-Friendly Amenities</h3>
-                <p class="hidden fade-bottom">
-                    Velvet Whisker goes beyond just providing exceptional food. We understand the importance of keeping your pets entertained and engaged during their visit. That's why our restaurant features a variety of pet-friendly amenities, such as play areas, interactive toys, and even a spa for pampering your furry friend.
-                </p>
-                <br><br><br>
-                <h3 class="hidden fade-top">Health and Safety</h3>
-                <p class="hidden fade-bottom">
-                    The health and safety of our guests is our top priority. We maintain strict cleanliness standards throughout our restaurant to ensure a hygienic environment for both pets and their owners. All ingredients used in our meals are carefully sourced and prepared to meet the highest standards of quality and nutrition.
-                </p>
+        <section id="section-4"> <!--Menu recommendations-->
+            <div class="menu-i-wrapper">
+                <h1 class="hidden fade-top">Your pets should try</h1>
+                <img src="images/misc/pawline.png" alt="break" class="break hidden fade-top">
+                <div class="menu-rec-wrapper">
+                    <img src="images/misc/wine.jpg" alt="wine" class="menu-rec-img hidden fade-left">
+                    <div class="todays hidden fade-left">
+                        <h3>Today's Special</h3>
+                        <p>
+                            <span class="item-number">004</span> Turkey Roulade with Pumpkin Purée <br> and Spinach Coulis & Chicken & <br>
+                            <span class="item-number">013</span> Turmeric Tonic <br> <br>
+                            <span class="pricetag">$21.98</span>
+                        </p>
+                    </div>
+                    <div class="chefs hidden fade-right">
+                        <h3>Chef's Recommendation</h3>
+                        <p>
+                            <span class="item-number">010 <span class="signature-tag">signature</span></span> Royal Wagyu Filet Mignon & <br>
+                            <span class="item-number">025</span> Purrsecco Bubbly <br> <br>
+                            <span class="pricetag">$33.98</span>
+                        </p>
+                    </div>
+                    <img src="images/misc/meat.jpg" alt="meat" class="menu-rec-img hidden fade-right">
+                </div>
+                <a href="menu.html" class="menu-button hidden fade-bottom">Check out the <span class="menu-tag">Menu</span> for more</a>
+                <img src="images/misc/pawline.png" alt="break" class="break hidden fade-bottom">
             </div>
-        </div>
+        </section>
 
         <section id="banner-3"><h1 class="info-header hidden fade-top">Play, Relax, and Enjoy: Pet-Friendly Amenities at Velvet Whisker</h1></section>
 
-        <div class="about-wrapper">
-            <div class="a-left-wrapper">
-                <h3 class="hidden fade-top">Visit <span class="visitVW-logo"><img src="images/logo/VelvetWhiskerLogoWhite.png" alt="logo white" style="width: auto; height: 60px;"></span> Today!</h3>
-                <p class="hidden fade-bottom">
-                    We invite you and your beloved furry friend to come and experience the magic of Velvet Whisker. Our dedicated staff is ready to provide you with exceptional service, ensuring that your pet's dining experience is nothing short of extraordinary. Come and embark on a culinary adventure with us at Velvet Whisker – where the whiskers are velvet, and the love for animals is unmatched.
-                </p>
+        <section id="section-5"> <!--Reviews-->
+            <div class="reviews-list">
+                <div class="review">
+                    <div class="profile">
+                        <img src="images/profiles/profile1.jpg" alt="solemnrat47">
+                        <div>
+                            <h2>⭐⭐⭐⭐⭐</h2>
+                            <h3>Review by solemnrat47:</h3>
+                        </div>
+                    </div>
+                    <p>"Velvet Whisker is an absolute delight! The staff is friendly, the food is top-notch, and the atmosphere is luxurious. I had a fantastic time!"</p>
+                </div>
+                <div class="review">
+                    <div class="profile">
+                        <img src="images/profiles/profile2.jpg" alt="cucumberrizz">
+                        <div>
+                            <h2>⭐⭐⭐⭐⭐</h2>
+                            <h3>Review by cucumberrizz:</h3>
+                        </div>
+                    </div>
+                    <p>"Visited Velvet Whisker for my birthday, and it was pawsitively amazing! The service was exceptional, and the gourmet dishes were a hit. Highly recommended!"</p>
+                </div>
+                <div class="review">
+                    <div class="profile">
+                        <img src="images/profiles/profile3.jpg" alt="indetroitWebison">
+                        <div>
+                            <h2>⭐⭐⭐⭐⭐</h2>
+                            <h3>Review by indetroitWebison:</h3>
+                        </div>
+                    </div>
+                    <p>"Velvet Whisker goes above and beyond! I enjoyed a sumptuous meal in a beautiful setting. Perfect for pet owners who want to treat me well!"</p>
+                </div>
             </div>
+        </section>
+<!--
+        <section id="section-6"> <!--More info
+            <div class="about-wrapper-2">
+                <div class="a-middle-wrapper text-allign-center">
+                    <h3 class="hidden fade-top">Pet-Friendly Amenities</h3>
+                    <p class="hidden fade-bottom">
+                        Velvet Whisker goes beyond just providing exceptional food. We understand the importance of keeping your pets entertained and engaged during their visit. That's why our restaurant features a variety of pet-friendly amenities, such as play areas, interactive toys, and even a spa for pampering your furry friend.
+                    </p>
+                    <br><br><br>
+                    <h3 class="hidden fade-top">Health and Safety</h3>
+                    <p class="hidden fade-bottom">
+                        The health and safety of our guests is our top priority. We maintain strict cleanliness standards throughout our restaurant to ensure a hygienic environment for both pets and their owners. All ingredients used in our meals are carefully sourced and prepared to meet the highest standards of quality and nutrition.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="section-7"> <!--Page end
+            <div class="about-wrapper">
+                <div class="a-left-wrapper">
+                    <h3 class="hidden fade-top">Visit <span class="visitVW-logo"><img src="images/logo/VelvetWhiskerLogoWhite.png" alt="logo white" style="width: auto; height: 60px;"></span> Today!</h3>
+                    <p class="hidden fade-bottom">
+                        We invite you and your beloved furry friend to come and experience the magic of Velvet Whisker. Our dedicated staff is ready to provide you with exceptional service, ensuring that your pet's dining experience is nothing short of extraordinary. Come and embark on a culinary adventure with us at Velvet Whisker – where the whiskers are velvet, and the love for animals is unmatched.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </main>-->   
+
+    <!--<footer>
+        <div class="footer-wrapper">
+            <p style="font-style: italic;">Note: Velvet Whisker is a fictional restaurant created for demonstration purposes only. We encourage supporting real animal-friendly establishments in your local community.</p>
         </div>
-
-    </main>
-
-    <footer>
-
-        <p style="font-style: italic;">Note: Velvet Whisker is a fictional restaurant created for demonstration purposes only. We encourage supporting real animal-friendly establishments in your local community.</p>
-
-    </footer>
+    </footer>-->
 
 </body>
 </html>
