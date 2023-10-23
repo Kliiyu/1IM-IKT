@@ -2,6 +2,9 @@
 /* Base */
 
 @import url(https://fonts.googleapis.com/css?family=Playfair+Display);
+:root {
+    --scrollAnimSpeed: 0.5s;
+}
 
 * {
     margin: 0;
@@ -9,10 +12,187 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: #1a1a1a;
-    min-height: 200vh;
+    min-height: 600vh;
+    overflow-x: hidden;
 }
+
+@media(prefers-reduced-motion) {
+    *, *::before, *::after {
+        transition: none !important;
+    }
+}
+
+
+/* Intro */
+
+.intro {
+    position: fixed;
+    z-index: 100000000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #292929;
+    transition: 1s;
+}
+
+.logo-header {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+}
+
+.i-logo {
+    position: relative;
+    display: inline-block;
+    bottom: -20px;
+    opacity: 0;
+}
+
+.i-logo.active {
+    bottom: 0;
+    opacity: 1;
+    transition: 0.5s ease-in-out;
+}
+
+.i-logo.fade {
+    bottom: 150px;
+    opacity: 0;
+    transition: 0.5s ease-in-out;
+}
+
+
+/* Scroll Animations */
+
+.hidden {
+    opacity: 0;
+    filter: blur(3px);
+    transition: all var(--scrollAnimSpeed);
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
+
+.show.fade-bottom {
+    animation: fade-bottom var(--scrollAnimSpeed) ease-in;
+}
+
+.show.fade-top {
+    animation: fade-top var(--scrollAnimSpeed) ease-in;
+}
+
+.show.fade-left {
+    animation: fade-left var(--scrollAnimSpeed) ease-in;
+}
+
+.show.fade-right {
+    animation: fade-right var(--scrollAnimSpeed) ease-in;
+}
+
+@keyframes fade-bottom {
+    0% {
+      transform: translateY(10%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+}
+
+@keyframes fade-top {
+    0% {
+      transform: translateY(-10%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+}
+
+@keyframes fade-left {
+    0% {
+      transform: translateX(-10%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+}
+
+@keyframes fade-right {
+    0% {
+      transform: translateX(10%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+}
+
+
+/* Sections */
+
+#section-2 {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    top: 100vh;
+    z-index: -10;
+}
+
+#banner-2 {
+    position: absolute;
+    height: 50vh;
+    width: 100vw;
+    top: 280vh;
+    z-index: -10;
+
+    background: url(../images/banners/banner2.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#banner-3 {
+    position: absolute;
+    height: 50vh;
+    width: 100vw;
+    top: 410vh;
+    z-index: -10;
+
+    background: url(../images/banners/banner3.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Main */
 
 header {
     position: fixed;
@@ -128,6 +308,33 @@ header.sticky ul li a {
     transition: top .2s ease-in-out;
 }
 
+.about-wrapper {
+    display: flex;
+}
+
+.a-left-wrapper {
+    display: block;
+    width: 50%;
+    margin: 10rem;
+    justify-content: flex-start;
+}
+
+.a-right-wrapper {
+    position: absolute;
+    display: flex;
+    margin: 10rem;
+    justify-content: flex-end;
+}
+
+.a-right-wrapper img {
+   width: 25%;
+   height: auto;
+}
+
+.menu-i-wrapper {
+    display: block;
+}
+
 .logo-main {
     display: block;
     width: 25%;
@@ -138,6 +345,12 @@ header.sticky ul li a {
     padding: .5em;
 }
 
+.menu-rec-wrapper {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
 .break {
     display: block;
     width: 15%;
@@ -145,33 +358,34 @@ header.sticky ul li a {
     margin-right: auto;
 }
 
-.main-wrapper {
-    display: flex;
-    justify-content: center;
+.menu-rec-img {
+    width: 250px;
+    height: 333px;
+    object-fit: cover;
+    padding: 1rem;
+    margin: .1rem;
+    border-radius: 20px;
+    filter: saturate(90%);
+    transition: all 0.3s ease-in-out;
+}
+
+.menu-rec-img:hover {
+    filter: saturate(110%);
+    transition: all 0.3s ease-in-out;
 }
 
 .todays {
-    position: relative;
     display: block;
-    margin: 1em;
-    padding: 1em;
-    max-width: 25%;
-}
-
-.wine-img {
-    height: 500px;
-    text-align: center;
-    margin-top: -5em;
-    padding: 1em;
-    padding-left: 2em;
+    margin: 1rem;
+    padding: 1rem;
+    width: 25%;
 }
 
 .chefs {
-    position: relative;
     display: block;
-    margin: 1em;
-    padding: 1em;
-    max-width: 25%;
+    margin: 1rem;
+    padding: 1rem;
+    width: 25%;
 }
 
 .chefs h3, .todays h3 {
@@ -217,14 +431,56 @@ header.sticky ul li a {
     text-decoration: none;
     letter-spacing: .5px;
     word-spacing: normal;
-    transition: word-spacing 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 
 .menu-button:hover {
-    word-spacing: 1px;
-    transition: word-spacing 0.3s ease-in-out;
+    font-size: larger;
+    transition: all 0.3s ease-in-out;
 }
 
 .menu-tag {
     color: #FFD700;
+}
+
+.info-header {
+    color: #fff;
+    font-family: 'Playfair Display', sans-serif;
+    font-weight: 700;
+    font-size: xx-large;
+    margin: 1rem;
+    padding: 1rem;
+    text-align: center;
+    filter: drop-shadow(2px 2px 2px #333);
+}
+
+.about-wrapper-2 {
+    position: absolute;
+    top: 325vh;
+}
+
+.text-allign-center {
+    text-align: center;
+}
+
+.a-middle-wrapper {
+    display: block;
+    width: 50%;
+    margin: 10rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.a-left-wrapper h3, .a-middle-wrapper h3, .a-right-wrapper h3 {
+    color: #FFD700;
+    font-family: 'Playfair Display', sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.a-left-wrapper p, .a-middle-wrapper p, .a-right-wrapper p {
+    color: #fff;
+    font-family: 'Playfair Display', sans-serif;
+    font-size: medium;
+    font-weight: 500;
 }
