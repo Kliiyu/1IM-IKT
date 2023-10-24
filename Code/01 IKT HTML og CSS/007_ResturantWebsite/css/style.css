@@ -2,6 +2,7 @@
 /* Base */
 
 @import url(https://fonts.googleapis.com/css?family=Playfair+Display);
+@import url(https://fonts.googleapis.com/css?family=Poppins);
 :root {
     --scrollAnimSpeed: 0.5s;
 }
@@ -102,7 +103,7 @@ body {
 
 @keyframes fade-bottom {
     0% {
-      transform: translateY(10%);
+      transform: translateY(15%);
       opacity: 0;
     }
     100% {
@@ -113,7 +114,7 @@ body {
 
 @keyframes fade-top {
     0% {
-      transform: translateY(-10%);
+      transform: translateY(-15%);
       opacity: 0;
     }
     100% {
@@ -124,7 +125,7 @@ body {
 
 @keyframes fade-left {
     0% {
-      transform: translateX(-10%);
+      transform: translateX(-15%);
       opacity: 0;
     }
     100% {
@@ -135,7 +136,7 @@ body {
 
 @keyframes fade-right {
     0% {
-      transform: translateX(10%);
+      transform: translateX(15%);
       opacity: 0;
     }
     100% {
@@ -170,9 +171,23 @@ body {
 
 #section-5 {
     position: absolute;
-    height: 100vh;
+    height: 50vh;
     width: 100%;
     top: 450vh;
+}
+
+#section-6 {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    top: 510vh;
+}
+
+#section-7 {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    top: 700vh;
 }
 
 .banner {
@@ -220,6 +235,15 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.b-header {
+    color: #fff;
+    filter: drop-shadow(2px 2px 2px #333);
+    font-family: 'Playfair Display', sans-serif;
+    font-size: xx-large;
+    letter-spacing: 1px;
+    word-spacing: 2px;
 }
 
 
@@ -396,6 +420,18 @@ header.sticky .navBarsCH {
     padding: 1rem;
 }
 
+.a-left-wrapper h3 {
+    font-size: xx-large;
+    font-family: 'Playfair Display', sans-serif;
+    color: #FFD700;
+    margin-bottom: .3rem;
+}
+
+.a-left-wrapper p {
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+}
+
 .a-right-wrapper {
     display: block;
     position: absolute;
@@ -550,6 +586,7 @@ header.sticky .navBarsCH {
     position: relative;
     display: block;
     color: #fff;
+    font-size: x-large;
     font-family: 'Playfair-Display', sans-serif;
     margin: 1em;
     text-align: center;
@@ -559,7 +596,7 @@ header.sticky .navBarsCH {
     position: relative;
     display: block;
     color: #fff;
-    font-family: 'Playfair-Display', sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 1em;
     text-align: center;
 }
@@ -669,29 +706,20 @@ header.sticky .navBarsCH {
     margin: 10rem;
 }
 
-.item {
-    position: absolute;
-    width: 200px;
-    height: 320px;
-    text-align: justify;
-    background-color: #fff;
-    border-radius: 10px;
-    padding: 20px;
-    transition: 0.5s;
-    left: calc(50% - 110px);
-    top: 0;
+.review:hover {
+    box-shadow: 0px 0px 30px rgba(0,0,0, 0.6);
 }
 
 #next, #prev {
     position: absolute;
-    top: 40%;
+    top: 25%;
     color: #fff;
     background-color: transparent;
     border: none;
     font-size: xxx-large;
     font-family: monospace;
     font-weight: bold;
-    left: 50px;
+    left: 300px;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
 }
@@ -703,67 +731,71 @@ header.sticky .navBarsCH {
 
 #next {
     left: unset;
-    right: 50px;
+    right: 300px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.info-header {
-    color: #fff;
-    font-family: 'Playfair Display', sans-serif;
-    font-weight: 700;
-    font-size: xx-large;
-    margin: 1rem;
-    padding: 1rem;
-    text-align: center;
-    filter: drop-shadow(2px 2px 2px #333);
+.sect6-wrapper {
+    position: relative;
+    display: flex;
 }
 
-.about-wrapper-2 {
+.info-image {
     position: absolute;
-    top: 325vh;
+    width: 700px;
+    height: 550px;
+    left: 5%;
+    top: 0;
+
+    background-image: url(../images/misc/softlight.jpg);
+    background-size: cover;
+    background-attachment: center;
+    background-repeat: no-repeat;
+
+    transition: all 0.3s ease-in-out;
 }
 
-.text-allign-center {
-    text-align: center;
+.info-image:hover {
+    transform: scale(1.01);
+    transition: all 0.3s ease-in-out;
 }
 
-.a-middle-wrapper {
-    display: block;
-    width: 50%;
-    margin: 10rem;
-    margin-left: auto;
-    margin-right: auto;
+.info-wrapper {
+    position: absolute;
+    width: 40%;
+    height: 50%;
+    top: 0;
+    left: 45%;
 }
 
-.a-left-wrapper h3, .a-middle-wrapper h3, .a-right-wrapper h3 {
+.info-wrapper h3 {
     color: #FFD700;
+    font-size: x-large;
+    font-weight: 600;
+    margin-bottom: .2em;
+    padding: .5em;
+    padding-bottom: .2em;
+    text-align: left;
     font-family: 'Playfair Display', sans-serif;
-    font-size: 3rem;
-    font-weight: 700;
 }
 
-.a-left-wrapper p, .a-middle-wrapper p, .a-right-wrapper p {
+.info-wrapper p, .info-wrapper ul {
     color: #fff;
-    font-family: 'Playfair Display', sans-serif;
+    margin: .5em;
+    margin-top: .2em;
+    padding: .5em;
+    padding-top: .2em;
+    font-family: 'Poppins', sans-serif;
+}
+
+.info-wrapper ul li {
     font-size: medium;
-    font-weight: 500;
+    margin: .3em;
+    padding: .3em;
+    transition: all 0.3s ease-in-out;
+    font-family: 'Poppins', sans-serif;
+}
+
+.info-wrapper ul li:hover {
+    transform: scale(1.01);
+    transition: all 0.3s ease-in-out;
 }

@@ -56,6 +56,7 @@ function loadShow(){
         items[i].style.filter = 'blur(5px)';
         items[i].style.opacity = stt > 2 ? 0 : 0.6;
     }
+    items[active].id = 'tilt';
 }
 loadShow();
 next.onclick = function(){
@@ -70,6 +71,9 @@ prev.onclick = function(){
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         console.log(entry);
+        if (entry.isIntersecting && entry.target.classList.contains('slider')) {
+            loadShow();
+        }
         if (entry.isIntersecting) {
             entry.target.classList.add('show');
         } else {
@@ -80,3 +84,53 @@ const observer = new IntersectionObserver((entries) => {
 
 const hiddenElements = document.querySelectorAll('.hidden');
 hiddenElements.forEach((el) => observer.observe(el));
+
+
+let elem = document.getElementById('tilt')
+
+let height = elem.clientHeight
+let width = elem.clientWidth
+
+const ELEMobserver = new MutationObserver((mutationsList) => {
+    for (const mutation of mutationsList) {
+      if (mutation.type === 'attributes' && mutation.attributeName === 'id') {
+        elem = document.getElementById('tilt')
+
+        height = elem.clientHeight
+        width = elem.clientWidth
+
+        addListeners(elem);
+      }
+    }
+});
+
+
+const config = { attributes: true };
+ELEMobserver.observe(elem, config);
+
+function handleMove(e) {
+    let xVal = e.layerX
+    let yVal = e.layerY
+        
+    let yRotation = 20 * ((xVal - width / 2) / width)
+    let xRotation = -20 * ((yVal - height / 2) / height)
+        
+    let string = 'perspective(500px) scale(1.1) rotateX(' + xRotation + 'deg) rotateY(' + yRotation + 'deg)'
+    elem.style.transform = string
+}
+
+function addListeners(e) {
+    e.addEventListener('mousemove', handleMove)
+
+    e.addEventListener('mouseout', function() {
+        e.style.transform = 'perspective(500px) scale(1) rotateX(0) rotateY(0)'
+    })
+        
+    e.addEventListener('mousedown', function() {
+        e.style.transform = 'perspective(500px) scale(0.9) rotateX(0) rotateY(0)'
+    })
+        
+    e.addEventListener('mouseup', function() {
+        e.style.transform = 'perspective(500px) scale(1.1) rotateX(0) rotateY(0)'
+    })
+}
