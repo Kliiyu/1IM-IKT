@@ -5,23 +5,162 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" type="text/css" href="css/style.css"/>
-    <script src="script/app.js"></script>
+    <script defer src="script/app.js"></script>
 
     <title>Menu</title>
 </head>
 <body>
 
+    <div class="intro">
+        <h1 class="logo-header">
+            <span class="i-logo">Velvet</span> <span class="i-logo">Whisker</span>
+        </h1>
+    </div>
+
     <header>
-        <a href="index.html">
+        <a href="#" onclick="pageRedirect('index.html')">
             <img src="images/logo/VWLogoNoSubTxt.png" class="logo" style="width: auto; height: 60px;">
             <img src="images/logo/VelvetWhiskerLogoBlack.png" class="logoCH" style="width: auto; height: 60px;">
         </a>
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="booking.html">Find a Table</a></li>
+            <li><a href="#" onclick="pageRedirect('index.html')">Home</a></li>
+            <li><a href="#" onclick="pageRedirect('booking.html')">Find a Table</a></li>
         </ul>
     </header>
-    <section class="banner"></section>
+    <section id="menu-banner">
+        <h1 class="hidden fade-top b-header lg-m-header">The Pawfect Menu</h1>
+        <h1 class="hidden fade-bottom b-header md-m-header">Our Menu</h1>
+        <h1 class="hidden fade-bottom b-header sm-m-header">Menu</h1>
+    </section>
+
+    <section class="menu-sect0"> <!--Menu Introduction-->
+        <p><span id="welcome-tag">Welcome to <span class="menu-tag" style="font-weight: 600;">Velvet Whisker</span></span>, a haven of <span class="menu-tag">culinary</span> delights exclusively for our cherished animal friends. Indulge your furry companions with our <span class="menu-tag">tail-wagging treats</span>, <span class="menu-tag">paw-some specialties</span>, and <span class="menu-tag">whisker-worthy beverages</span>, all crafted from the finest, <span class="menu-tag">all-natural</span> ingredients. With a cozy and pet-friendly atmosphere, <span class="menu-tag">Velvet Whisker</span> is the perfect place for your pets to enjoy a <span class="menu-tag">unique</span> dining experience. Join us today and let your pets embark on a <span class="menu-tag">culinary journey</span> that will leave their taste buds purring with delight.</p>
+    </section>
+    
+    <section class="menu-sect1"> <!--Appetizer-->
+        <div class="menu-header">
+            <h2>── Appetizers ──</h2>
+            <div class="mh-banner"></div>
+        </div>
+        <div class="menu-items mi-left">
+            <div class="item hidden fade-left">
+                <div class="item-left">
+                    <h3><span class="numtag">001</span> Gourmet Beef Tenderloin Medallions</h3>
+                    <h5>Prime cuts of lean beef tenderloin, accompanied by a delicately puréed blend of sweet potatoes and garden-fresh peas</h5>
+                </div>
+                <div class="item-price">
+                    <h3>$15.99</h3>
+                </div>
+            </div>
+            <div class="item hidden fade-left">
+                <div class="item-left">
+                    <h3><span class="numtag">001</span> Gourmet Beef Tenderloin Medallions</h3>
+                    <h5>Prime cuts of lean beef tenderloin, accompanied by a delicately puréed blend of sweet potatoes and garden-fresh peas</h5>
+                </div>
+                <div class="item-price">
+                    <h3>$15.99</h3>
+                </div>
+            </div>
+            <div class="item hidden fade-left">
+                <div class="item-left">
+                    <h3><span class="numtag">001</span> Gourmet Beef Tenderloin Medallions</h3>
+                    <h5>Prime cuts of lean beef tenderloin, accompanied by a delicately puréed blend of sweet potatoes and garden-fresh peas</h5>
+                </div>
+                <div class="item-price">
+                    <h3>$15.99</h3>
+                </div>
+            </div>
+            <div class="item hidden fade-left">
+                <div class="item-left">
+                    <h3><span class="numtag">001</span> Gourmet Beef Tenderloin Medallions</h3>
+                    <h5>Prime cuts of lean beef tenderloin, accompanied by a delicately puréed blend of sweet potatoes and garden-fresh peas</h5>
+                </div>
+                <div class="item-price">
+                    <h3>$15.99</h3>
+                </div>
+            </div>
+        </div>
+        <div class="menu-items mi-right">
+            <div class="item hidden fade-left">
+                <div class="item-left">
+                    <h3><span class="numtag">001</span> Gourmet Beef Tenderloin Medallions</h3>
+                    <h5>Prime cuts of lean beef tenderloin, accompanied by a delicately puréed blend of sweet potatoes and garden-fresh peas</h5>
+                </div>
+                <div class="item-price">
+                    <h3>$15.99</h3>
+                </div>
+            </div>
+            <div class="item hidden fade-left">
+                <div class="item-left">
+                    <h3><span class="numtag">001</span> Gourmet Beef Tenderloin Medallions</h3>
+                    <h5>Prime cuts of lean beef tenderloin, accompanied by a delicately puréed blend of sweet potatoes and garden-fresh peas</h5>
+                </div>
+                <div class="item-price">
+                    <h3>$15.99</h3>
+                </div>
+            </div>
+            <div class="item hidden fade-left">
+                <div class="item-left">
+                    <h3><span class="numtag">001</span> Gourmet Beef Tenderloin Medallions</h3>
+                    <h5>Prime cuts of lean beef tenderloin, accompanied by a delicately puréed blend of sweet potatoes and garden-fresh peas</h5>
+                </div>
+                <div class="item-price">
+                    <h3>$15.99</h3>
+                </div>
+            </div>
+            <div class="item hidden fade-left">
+                <div class="item-left">
+                    <h3><span class="numtag">001</span> Gourmet Beef Tenderloin Medallions</h3>
+                    <h5>Prime cuts of lean beef tenderloin, accompanied by a delicately puréed blend of sweet potatoes and garden-fresh peas</h5>
+                </div>
+                <div class="item-price">
+                    <h3>$15.99</h3>
+                </div>
+            </div>
+        </div>
+    </section> 
+
+    <section class="menu-sect2"> <!--Main Course-->
+
+        <div class="menu-items">
+            
+        </div>
+    </section> 
+
+    <section class="menu-sect3"> <!--Dessert-->
+
+        <div class="menu-items">
+            
+        </div>
+    </section> 
+
+    <section class="menu-sect4"> <!--Drinks-->
+
+        <div class="menu-items">
+            
+        </div>
+    </section> 
+
+    <section class="menu-sect5"> <!--Wine-->
+
+        <div class="menu-items">
+            
+        </div>
+    </section>
+
+    <section class="menu-sect6"> <!--Human Main Course-->
+
+        <div class="menu-items">
+            
+        </div>
+    </section>
+
+    <section class="menu-sect7"> <!--Human Drinks-->
+
+        <div class="menu-items">
+            
+        </div>
+    </section>
     
 </body>
 </html>

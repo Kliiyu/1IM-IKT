@@ -6,6 +6,7 @@
 
     <link rel="stylesheet" type="text/css" href="css/style.css"/>
     <script defer src="script/app.js"></script>
+    <script defer src="script/slider.js"></script>
 
     <title>Velvet Whisker</title>
 </head>
@@ -18,13 +19,13 @@
     </div>
 
     <header>
-        <a href="index.html">
+        <a href="#"onclick="pageRedirect('index.html')">
             <img src="images/logo/VWLogoNoSubTxt.png" class="logo" style="width: auto; height: 60px;">
             <img src="images/logo/VelvetWhiskerLogoBlack.png" class="logoCH" style="width: auto; height: 60px;">
         </a>
         <ul>
-            <li><a href="menu.html">Menu</a></li>
-            <li><a href="booking.html">Find a Table</a></li>
+            <li><a href="#" onclick="pageRedirect('menu.html')">Menu</a></li>
+            <li><a href="#" onclick="pageRedirect('booking.html')">Find a Table</a></li>
         </ul>
         <div class="toggle-btn">
             <img src="images/icons/bars-solid-white.png" class="navBars">
@@ -33,7 +34,9 @@
     </header>
     <section class="banner">
         <div id="scroll-wrapper" class="hidden fade-top">
-            <h5>Scroll down for more</h3>
+            <h5 id="lg-sw-header">Scroll down for more</h5>
+            <h5 id="md-sw-header">Scroll down</h5>
+            <h5 id="sm-sw-header">Scroll</h5>
             <a href="#section-2"><img src="images/icons/arrow-down.png" alt="scroll icon"></a>
         </div>
     </section>
@@ -44,16 +47,24 @@
             <div class="about-wrapper">
                 <div class="a-left-wrapper">
                     <h3 class="hidden fade-left">About Us</h3>
-                    <p class="hidden fade-left">
+                    <p class="hidden fade-left lg-about">
                         At <span class="menu-tag">Velvet Whisker</span>, we believe that animals deserve a dining experience that is as <span class="menu-tag">elegant and delightful</span> as it is for their human companions. Situated in the heart of <a href="#section-3" style="text-decoration: none; font-weight: 700;" class="menu-tag">Easter Island</a>, our restaurant is a haven for animal lovers, providing a unique and enchanting environment where pets and their owners can share <span class="menu-tag">memorable culinary moments</span>.
                         <br><br>
                         With a deep appreciation for the bond between humans and animals, we have created <span class="menu-tag">Velvet Whisker</span> to be a safe and inviting space for all creatures great and small. Our utmost commitment is to offer the <span class="menu-tag">highest quality</span> of service and delectable dishes that satisfy both the discerning palates of animals and the expectations of their human counterparts.
                     </p>
+                    <p class="hidden fade-left md-about">
+                        At <span class="menu-tag">Velvet Whisker</span>, we are dedicated to providing a truly <span class="menu-tag">extraordinary dining</span> experience for both animals and their human companions. Nestled in the heart of <a href="#section-3" style="text-decoration: none; font-weight: 700;" class="menu-tag">Easter Island</a>, our restaurant offers a <span class="menu-tag">captivating and enchanting</span> environment where pets and their owners can create <span class="menu-tag">lasting culinary memories</span>.
+                        <br><br>
+                        With a deep appreciation for the <span class="menu-tag">profound bond</span> between humans and animals, we have meticulously crafted <span class="menu-tag">Velvet Whisker</span> to be a <span class="menu-tag">safe and inviting</span> space for creatures of all sizes. </p>
+                    </p>
+                    <p class="hidden fade-left sm-about">  
+                        At <span class="menu-tag">Velvet Whisker</span>, we believe animals deserve an <span class="menu-tag">elegant</span> dining experience. Located on <a href="#section-3" style="text-decoration: none; font-weight: 700;" class="menu-tag">Easter Island</a>, our restaurant is a <span class="menu-tag">haven for pet lovers</span>, offering a unique environment where pets and owners can share <span class="menu-tag">memorable culinary moments</span>.
+                    </p>
                 </div>
                 <div class="a-right-wrapper">
-                    <img src="images/misc/deer.jpg" alt="deer" class="hidden fade-left">
-                    <img src="images/misc/parrot.jpg" alt="parrot" class="hidden fade-top">
-                    <img src="images/misc/tiger.jpg" alt="tiger" class="hidden fade-right">
+                    <img src="images/misc/deer.jpg" alt="deer" id="a-img1" class="hidden fade-left">
+                    <img src="images/misc/parrot.jpg" alt="parrot" id="a-img2" class="hidden fade-top">
+                    <img src="images/misc/tiger.jpg" alt="tiger" id="a-img3" class="hidden fade-right">
                 </div>
             </div>
         </section>
@@ -88,7 +99,7 @@
             </div>
         </section>
 
-        <section id="banner-2"><h1 class="info-header hidden fade-bottom b-header">Indulge in Gourmet Delights Tailored for Animals</h1></section>
+        <section id="banner-2"><h1 class="info-header hidden fade-bottom b-header b2-header">Indulge in Gourmet Delights Tailored for Animals</h1><h1 class="info-header hidden fade-bottom b-header md-b-header">Gourmet Delights Tailored for Animals</h1><h1 class="info-header hidden fade-bottom b-header sm-b-header">Gourmet Delights</h1></section>
 
         <section id="section-4"> <!--Menu recommendations-->
             <div class="menu-i-wrapper">
@@ -114,58 +125,48 @@
                     </div>
                     <img src="images/misc/meat.jpg" alt="meat" class="menu-rec-img hidden fade-right">
                 </div>
-                <a href="menu.html" class="menu-button hidden fade-bottom">Check out the <span class="menu-tag">Menu</span> for more</a>
+                <a href="#" onclick="pageRedirect('menu.html')" class="menu-button hidden fade-bottom">Check out the <span class="menu-tag">Menu</span> for more</a>
                 <img src="images/misc/pawline.png" alt="break" class="break hidden fade-bottom">
             </div>
         </section>
 
-        <section id="banner-3"><h1 class="info-header hidden fade-top b-header">Play, Relax, and Enjoy: Pet-Friendly Amenities at Velvet Whisker</h1></section>
+        <section id="banner-3"><h1 class="info-header hidden fade-top b-header b3-header">Play, Relax, and Enjoy: Pet-Friendly Amenities at Velvet Whisker</h1><h1 class="info-header hidden fade-bottom b-header md-b-header">Play, Relax, and Enjoy: Pet-Friendly Amenities</h1><h1 class="info-header hidden fade-bottom b-header sm-b-header">Play, Relax, and Enjoy</h1></section>
 
         <section id="section-5"> <!--Reviews-->
             <div class="sect5-wrapper">
                 <div class="slider hidden">
                     <div class="review">
                         <div class="profile">
-                            <img src="images/profiles/profile1.jpg" alt="solemnrat47">
+                            <img src="images/profiles/profile1.jpg" alt="glockendog">
                             <div>
                                 <h2>⭐⭐⭐⭐⭐</h2>
-                                <h3>Review by solemnrat47:</h3>
+                                <h3>Review by glockendog:</h3>
                             </div>
                         </div>
                         <p><span class="quote">"</span> Velvet Whisker is an absolute delight! The staff is friendly, the food is top-notch, and the atmosphere is luxurious. I had a fantastic time! <span class="quote">"</span></p>
                     </div>
                     <div class="review">
                         <div class="profile">
-                            <img src="images/profiles/profile2.jpg" alt="cucumberrizz">
+                            <img src="images/profiles/profile3.jpg" alt="atomicmole56">
                             <div>
                                 <h2>⭐⭐⭐⭐⭐</h2>
-                                <h3>Review by cucumberrizz:</h3>
+                                <h3>Review by atomicmole56:</h3>
                             </div>
                         </div>
                         <p><span class="quote">"</span> Visited Velvet Whisker for my birthday, and it was pawsitively amazing! The service was exceptional, and the gourmet dishes were a hit. Highly recommended! <span class="quote">"</span></p>
                     </div>
                     <div class="review">
                         <div class="profile">
-                            <img src="images/profiles/profile3.jpg" alt="indetroitWebison">
+                            <img src="images/profiles/profile4.jpg" alt="felinesupernova">
                             <div>
                                 <h2>⭐⭐⭐⭐⭐</h2>
-                                <h3>Review by indetroitWebison:</h3>
+                                <h3>Review by felinesupernova:</h3>
                             </div>
                         </div>
                         <p><span class="quote">"</span> Velvet Whisker goes above and beyond! I enjoyed a sumptuous meal in a beautiful setting. Perfect for pet owners who want to treat me well! <span class="quote">"</span></p>
                     </div>
                     <div class="review">
                         <div class="profile">
-                            <img src="images/profiles/profile1.jpg" alt="solemnrat47">
-                            <div>
-                                <h2>⭐⭐⭐⭐⭐</h2>
-                                <h3>Review by solemnrat47:</h3>
-                            </div>
-                        </div>
-                        <p><span class="quote">"</span> Velvet Whisker is an absolute delight! The staff is friendly, the food is top-notch, and the atmosphere is luxurious. I had a fantastic time! <span class="quote">"</span></p>
-                    </div>
-                    <div class="review">
-                        <div class="profile">
                             <img src="images/profiles/profile2.jpg" alt="cucumberrizz">
                             <div>
                                 <h2>⭐⭐⭐⭐⭐</h2>
@@ -176,20 +177,30 @@
                     </div>
                     <div class="review">
                         <div class="profile">
-                            <img src="images/profiles/profile2.jpg" alt="cucumberrizz">
+                            <img src="images/profiles/profile5.jpg" alt="2mm-hummingbird">
                             <div>
                                 <h2>⭐⭐⭐⭐⭐</h2>
-                                <h3>Review by cucumberrizz:</h3>
+                                <h3>Review by notaracoon:</h3>
+                            </div>
+                        </div>
+                        <p><span class="quote">"</span> Velvet Whisker's dumpsters hold unexpected gourmet delights for the adventurous scavenger, offering a tantalizing dining experience that caters to the discerning palates of resourceful foragers like myself! <span class="quote">"</span></p>
+                    </div>
+                    <div class="review">
+                        <div class="profile">
+                            <img src="images/profiles/profile2.jpg" alt="pingpongpenguin28">
+                            <div>
+                                <h2>⭐⭐⭐⭐⭐</h2>
+                                <h3>Review by pingpongpenguin28:</h3>
                             </div>
                         </div>
                         <p><span class="quote">"</span> Visited Velvet Whisker for my birthday, and it was pawsitively amazing! The service was exceptional, and the gourmet dishes were a hit. Highly recommended! <span class="quote">"</span></p>
                     </div>
                     <div class="review">
                         <div class="profile">
-                            <img src="images/profiles/profile2.jpg" alt="cucumberrizz">
+                            <img src="images/profiles/profile2.jpg" alt="hahabigmonkeyhuehue">
                             <div>
                                 <h2>⭐⭐⭐⭐⭐</h2>
-                                <h3>Review by cucumberrizz:</h3>
+                                <h3>Review by hahabigmonkeyhuehue:</h3>
                             </div>
                         </div>
                         <p><span class="quote">"</span> Visited Velvet Whisker for my birthday, and it was pawsitively amazing! The service was exceptional, and the gourmet dishes were a hit. Highly recommended! <span class="quote">"</span></p>
