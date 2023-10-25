@@ -53,7 +53,7 @@ body {
 }
 
 
-/* Intro 
+/* Intro
 
 .intro {
     position: fixed;
@@ -1053,63 +1053,64 @@ header.sticky .navBarsCH {
 /* Sections */
 
 .menu-sect0 {
-    position: absolute;
-    height: 100vh;
+    display: block;
+    position: relative;
+    height: 50vh;
     width: 100vw;
-    top: 50vh;
+    margin-top: 50vh;
 }
 
 .menu-sect1 {
-    position: absolute;
+    display: block;
+    position: relative;
     height: 100vh;
     width: 100vw;
-    top: 150vh;
 }
 
 .menu-sect2 {
-    position: absolute;
+    display: block;
+    position: relative;
     height: 160vh;
     width: 100vw;
-    top: 250vh;
 }
 
 .menu-sect3 {
-    position: absolute;
+    display: block;
+    position: relative;
     height: 100vh;
     width: 100vw;
-    top: 410vh;
     background-color: orange;
 }
 
 .menu-sect4 {
-    position: absolute;
+    display: block;
+    position: relative;
     height: 100vh;
     width: 100vw;
-    top: 510vh;
     background-color: purple;
 }
 
 .menu-sect5 {
-    position: absolute;
+    display: block;
+    position: relative;
     height: 100vh;
     width: 100vw;
-    top: 610vh;
     background-color: aqua;
 }
 
-.menu-sect6 {
-    position: absolute;
+.menu-sect6 { 
+    display: block;
+    position: relative;
     height: 100vh;
     width: 100vw;
-    top: 710vh;
     background-color: violet;
 }
 
 .menu-sect7 {
-    position: absolute;
+    display: block;
+    position: relative;
     height: 100vh;
-    width: 100vw;
-    top: 810vh;
+    width: 100vw; 
     background-color: red;
 }
 
@@ -1204,6 +1205,10 @@ header.sticky .navBarsCH {
 
 /* Menu Item */
 
+.menu-header {
+    display: block;
+}
+
 .menu-header h2 {
     position: absolute;
     color: #fff;
@@ -1238,29 +1243,33 @@ header.sticky .navBarsCH {
     font-family: 600;
 }
 
-.menu-items {
+.container {
+    position: relative;
+    display: inline-flex;
+    max-width: 100%;
+    height: 60vh;
+    top: 30vh;
+    margin: 5vh;
+}
+
+.ml-column {
+    margin: 1rem;
+}
+
+.row {
+    position: relative;
     display: block;
-    position: absolute;
-    width: 700px;
-    margin: 3rem;
-    margin-top: 34vh;
-    overflow: hidden;
-}
-
-.mi-left {
-    left: 0;
-}
-
-.mi-right {
-    right: 0;
+    width: 610px;
 }
 
 .item {
     position: relative;
     display: block;
-    width: 500x;
+    width: 500px;
     height: 100px;
-    margin: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    left: 100px;
     border: 2px dashed #333;
     transition: all 0.3s ease-in-out;
 }
@@ -1269,6 +1278,28 @@ header.sticky .navBarsCH {
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.6);
     transform: scale(1.01);
     transition: all 0.3s ease-in-out;
+}
+
+.item-img {
+    position: absolute;
+    display: block;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+.item-img:hover {
+    transform: scale(1.05);
+    transition: all 0.3s ease-in-out;
+}
+
+.item-img img {
+    position: absolute;
+    display: block;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
 }
 
 .item-left {
@@ -1312,9 +1343,11 @@ header.sticky .navBarsCH {
 /* Menu Introduction */
 
 .menu-sect0 p {
-    position: absolute;
-    top: 5%;
-    margin: 10rem;
+    position: relative;
+    width: 70%;
+    height: 300px;
+    top: 12.5%;
+    margin: auto;
     padding: 1rem;
     font-family: 'Poppins', sans-serif;
     font-size: var(--font-size-md);
