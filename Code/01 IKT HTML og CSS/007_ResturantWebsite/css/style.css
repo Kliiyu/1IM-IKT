@@ -1068,17 +1068,16 @@ header.sticky .navBarsCH {
 
 .menu-sect2 {
     position: absolute;
-    height: 100vh;
+    height: 160vh;
     width: 100vw;
     top: 250vh;
-    background-color: blue;
 }
 
 .menu-sect3 {
     position: absolute;
     height: 100vh;
     width: 100vw;
-    top: 350vh;
+    top: 410vh;
     background-color: orange;
 }
 
@@ -1086,7 +1085,7 @@ header.sticky .navBarsCH {
     position: absolute;
     height: 100vh;
     width: 100vw;
-    top: 450vh;
+    top: 510vh;
     background-color: purple;
 }
 
@@ -1094,7 +1093,7 @@ header.sticky .navBarsCH {
     position: absolute;
     height: 100vh;
     width: 100vw;
-    top: 550vh;
+    top: 610vh;
     background-color: aqua;
 }
 
@@ -1102,7 +1101,7 @@ header.sticky .navBarsCH {
     position: absolute;
     height: 100vh;
     width: 100vw;
-    top: 650vh;
+    top: 710vh;
     background-color: violet;
 }
 
@@ -1110,7 +1109,7 @@ header.sticky .navBarsCH {
     position: absolute;
     height: 100vh;
     width: 100vw;
-    top: 750vh;
+    top: 810vh;
     background-color: red;
 }
 
@@ -1210,7 +1209,7 @@ header.sticky .navBarsCH {
     color: #fff;
     font-weight: 300;
     font-family: 'Playfair Display', sans-serif;
-    font-size: var(--font-size-xxl);
+    font-size: var(--font-size-xl);
     text-align: center;
     width: 500px;
     top: 5%;
@@ -1244,9 +1243,8 @@ header.sticky .navBarsCH {
     position: absolute;
     width: 700px;
     margin: 3rem;
-    resize: vertical;
     margin-top: 34vh;
-    overflow: auto;
+    overflow: hidden;
 }
 
 .mi-left {
@@ -1260,7 +1258,7 @@ header.sticky .navBarsCH {
 .item {
     position: relative;
     display: block;
-    width: 600px;
+    width: 500x;
     height: 100px;
     margin: 10px;
     border: 2px dashed #333;
@@ -1276,7 +1274,6 @@ header.sticky .navBarsCH {
 .item-left {
     display: block;
     position: absolute;
-    left: 0;
     top: 0;
     padding: 5px;
     font-family: 'Playfair Display', sans-serif;
@@ -1316,6 +1313,7 @@ header.sticky .navBarsCH {
 
 .menu-sect0 p {
     position: absolute;
+    top: 5%;
     margin: 10rem;
     padding: 1rem;
     font-family: 'Poppins', sans-serif;
