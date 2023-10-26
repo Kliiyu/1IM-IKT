@@ -172,48 +172,55 @@ body {
 /* Sections */
 
 #section-2 {
-    position: absolute;
-    height: 100vh;
+    display: block;
+    position: relative;
+    height: 150vh;
     width: 100vw;
-    top: 100vh;
+    overflow: hidden;
 }
 
 #section-3 {
-    position: absolute;
+    display: block;
+    position: relative;
     height: 100vh;
     width: 100vw;
-    top: 200vh;
+    overflow: hidden;
 }
 
 #section-4 {
-    position: absolute;
-    height: 100vh;
+    display: block;
+    position: relative;
+    height: 110vh;
     width: 100vw;
-    top: 300vh;
+    overflow: hidden;
 }
 
 #section-5 {
-    position: absolute;
-    height: 50vh;
+    display: block;
+    position: relative;
+    height: 100vh;
     width: 100%;
-    top: 450vh;
+    overflow: hidden;
 }
 
 #section-6 {
-    position: absolute;
+    display: block;
+    position: relative;
     height: 100vh;
     width: 100%;
-    top: 510vh;
+    overflow: hidden;
 }
 
 #section-7 {
-    position: absolute;
+    display: block;
+    position: relative;
     height: 100vh;
     width: 100%;
-    top: 700vh;
+    overflow: hidden;
 }
 
 .banner {
+    display: block;
     position: relative;
     width: 100%;
     height: 100vh;
@@ -225,10 +232,10 @@ body {
 }
 
 #banner-2 {
-    position: absolute;
+    display: block;
+    position: relative;
     height: 50vh;
     width: 100vw;
-    top: 275vh;
     z-index: -10;
 
     background: url(../images/banners/banner2.jpg);
@@ -243,10 +250,10 @@ body {
 }
 
 #banner-3 {
-    position: absolute;
+    display: block;
+    position: relative;
     height: 50vh;
     width: 100vw;
-    top: 400vh;
     z-index: -10;
 
     background: url(../images/banners/banner3.jpg);
@@ -606,7 +613,8 @@ header.sticky .navBarsCH {
     }
     .about-wrapper {
         top: 10%;
-        left: 10%;
+        margin-left: auto;
+        margin-right: auto;
         margin: 0.7rem;
     }
     .a-left-wrapper {
@@ -634,7 +642,8 @@ header.sticky .navBarsCH {
     }
     .about-wrapper {
         top: 10%;
-        left: 15%;
+        margin-left: auto;
+        margin-right: auto;
         margin: 1.5rem;
     }
     .a-right-wrapper {
@@ -678,6 +687,9 @@ header.sticky .navBarsCH {
     .about-wrapper {
         margin: 5rem;
     }
+    .a-right-wrapper {
+        margin-right: 5rem;
+    }
 } 
 
 @media (min-width: 1281px) { 
@@ -693,42 +705,69 @@ header.sticky .navBarsCH {
     .about-wrapper {
         margin: 5rem;
     }
+    .a-right-wrapper {
+        margin-right: 7rem;
+    }
 } 
 
 .sect3-wrapper {
     position: relative;
+    height: 100%;
+    width: 100%;
     display: flex;
+    padding: 2rem;
+    justify-content: center;
 }
 
 .location-info {
     position: relative;
     display: block;
-    margin: 10rem;
+    margin: 5rem;
+    width: 600px;
+    height: 60%;
+}
+
+.location-info img {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
 }
 
 .opening-times {
-    position: relative;
+    position: absolute;
     display: block;
-    margin: 10rem;
-    text-align: center;
-    padding: 1rem;
+    width: 50%;
+    height: 60%;
     border: 2px dashed #333;
 }
 
 .opening-times img {
+    position: relative;
     display: block;
-    width: 400px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
     height: auto;
 }
 
 .opening-times h3 {
+    position: absolute;
     display: block;
     color: #fff;
+    text-align: center;
+    font-size: var(--font-size-md);
 }
 
 .opening-times table {
-    width: 100%;
+    position: absolute;
+    width: 90%;
     height: 50%;
+    bottom: 0;
+    left: 5%;
 }
 
 .opening-times th {
@@ -737,17 +776,74 @@ header.sticky .navBarsCH {
 
 .opening-times tr {
     color: #fff; 
+    font-size: var(--font-size-lg);
 }
 
 .opening-times td {
     text-align: right;
     color: #FFD700; 
+    margin: .2rem;
+}
+
+@media (max-width: 480px) { 
+    .opening-times tr {
+        font-size: var(--font-size-sm);
+    }  
+    .opening-times h3 {
+        font-size: var(--font-size-sm);
+    }  
+    .opening-times {
+        width: 70%;
+        height: 40%;
+    }
+    .location-info img {
+        display: none;
+    }
+} 
+
+@media (min-width: 481px) and (max-width: 767px) {
+    .opening-times tr {
+        font-size: var(--font-size-sm);
+    }  
+    .opening-times h3 {
+        font-size: var(--font-size-sm);
+    } 
+    .opening-times {
+        width: 70%;
+        height: 40%;
+    }
+    .location-info img {
+        display: none;
+    }   
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .opening-times tr {
+        font-size: var(--font-size-sm);
+    } 
+    .opening-times h3 {
+        font-size: var(--font-size-sm);
+    }
+
+}
+
+@media (min-width: 1025px) and (max-width: 1280px) { 
+    .opening-times tr {
+        font-size: var(--font-size-md);
+    }  
+    .opening-times h3 {
+        font-size: var(--font-size-sm);
+    }  
+
+}
+
+@media (min-width: 1281px) { 
+ 
 }
 
 .menu-i-wrapper {
     position: relative;
     display: block;
-    top: 30%;
 }
 
 .menu-i-wrapper h1 {
@@ -760,6 +856,8 @@ header.sticky .navBarsCH {
 }
 
 .menu-rec-wrapper {
+    position: relative;
+    height: 100%;
     display: flex;
     text-align: center;
     justify-content: center;
@@ -794,6 +892,7 @@ header.sticky .navBarsCH {
     margin: 1rem;
     padding: 1rem;
     width: 25%;
+    height: auto;
     border: 2px dashed #333;
     transition: all 0.3s ease-in-out;
 }
@@ -803,6 +902,7 @@ header.sticky .navBarsCH {
     margin: 1rem;
     padding: 1rem;
     width: 25%;
+    height: auto;
     border: 2px dashed #333;
     transition: all 0.3s ease-in-out;
 }
@@ -868,6 +968,57 @@ header.sticky .navBarsCH {
     color: #FFD700;
 }
 
+@media (max-width: 480px) { 
+    .menu-rec-img {
+        display: none;
+    }
+    .break {
+        display: none;
+    }
+    .menu-rec-wrapper {
+        display: block;
+    }
+    .todays, .chefs {
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+} 
+
+@media (min-width: 481px) and (max-width: 767px) {
+    .menu-rec-img {
+        display: none;
+    }
+    .break {
+        display: none;
+    }
+    .menu-rec-wrapper {
+        display: block;
+    }
+    .todays, .chefs {
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .menu-rec-img {
+        display: none;
+    }
+    .break {
+        display: none;
+    }
+    .menu-rec-wrapper {
+        display: block;
+    }
+    .todays, .chefs {
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
 .review {
     display: inline-block;
     position: absolute;
@@ -928,6 +1079,7 @@ header.sticky .navBarsCH {
 
 .sect5-wrapper {
     position: relative;
+    height: 100%;
     display: flex;
 }
 
@@ -967,6 +1119,70 @@ header.sticky .navBarsCH {
     left: unset;
     right: 300px;
 }
+
+@media (max-width: 480px) { 
+    .slider {
+        margin: .5rem;
+    }
+    #next {
+        right: 110px;
+        top: 65%;
+    }
+    #prev {
+        left: 110px;
+        top: 65%;
+    }
+} 
+
+@media (min-width: 481px) and (max-width: 767px) {
+    .slider {
+        margin: .5rem;
+    }
+    #next {
+        right: 110px;
+        top: 65%;
+    }
+    #prev {
+        left: 110px;
+        top: 65%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .slider {
+        margin: 1.5rem;
+    }
+    #next {
+        right: 50px;
+    }
+    #prev {
+        left: 50px;
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1280px){ 
+    .slider {
+        margin: 5rem;
+    }
+    #next {
+        right: 100px;
+    }
+    #prev {
+        left: 100px;
+    }
+} 
+
+@media (min-width: 1281px){ 
+    .slider {
+        margin: 5rem;
+    }
+    #next {
+        right: 250px;
+    }
+    #prev {
+        left: 250px;
+    }
+} 
 
 .sect6-wrapper {
     position: relative;
@@ -1108,7 +1324,11 @@ header.sticky .navBarsCH {
     
 }
 
-@media (min-width: 1025px) and (max-width: 1280px){ 
+@media (min-width: 1025px) and (max-width: 1280px) { 
+    
+} 
+
+@media (min-width: 1281px) { 
     
 } 
 
