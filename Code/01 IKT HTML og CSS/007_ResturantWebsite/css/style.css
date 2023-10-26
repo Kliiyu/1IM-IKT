@@ -547,7 +547,7 @@ header.sticky .navBarsCH {
 }
 
 .a-left-wrapper p {
-    font-size: calc(var(--font-size-sm) + clamp(0.08rem, 0.11rem, 0.13rem));
+    font-size: calc(var(--font-size-sm));
     font-family: 'Poppins', sans-serif;
     color: #fff;
 }
@@ -612,6 +612,7 @@ header.sticky .navBarsCH {
     .a-left-wrapper {
         width: 300px;
         height: 200px;
+        padding: .5rem;
     }
     .a-right-wrapper {
         display: none;
@@ -642,6 +643,7 @@ header.sticky .navBarsCH {
     .a-left-wrapper {
         width: 300px;
         height: 200px;
+        padding: .5rem;
     }
     .logo-main {
         width: 60%;
@@ -867,6 +869,7 @@ header.sticky .navBarsCH {
 }
 
 .review {
+    display: inline-block;
     position: absolute;
     width: 400px;
     height: 200px;
@@ -1032,6 +1035,37 @@ header.sticky .navBarsCH {
     transition: all 0.3s ease-in-out;
 }
 
+.contact-wrapper {
+    display: block;
+    position: absolute;
+    color: #fff;
+    font-size: var(--font-size-md);
+    border: 2px dashed #333;
+    margin: 10rem;
+    padding: 1rem;
+    text-align: center;
+}
+
+.hyperlink {
+    text-decoration: none;
+    color: #FFD700;
+}
+
+.book-btn {
+    font-size: var(--font-size-xl);
+    font-family: 'Poppins', sans-serif;
+    border: 3px dashed #333;
+    border-radius: 10px;
+    background-color: #232323;
+    padding: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.book-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 30px rgba(0,0,0, 0.6);
+    transition: all 0.3s ease-in-out;
+}
 
 
 
@@ -1052,70 +1086,34 @@ header.sticky .navBarsCH {
 
 /* Sections */
 
-.menu-sect0 {
-    display: block;
+.menu-section { /* Human Drinks */
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
     position: relative;
-    height: 50vh;
-    width: 100vw;
-    margin-top: 50vh;
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
 }
 
-.menu-sect1 {
-    display: block;
-    position: relative;
-    height: 100vh;
-    width: 100vw;
+@media (max-width: 480px) { 
+    
+} 
+
+@media (min-width: 481px) and (max-width: 767px) {
+    
 }
 
-.menu-sect2 {
-    display: block;
-    position: relative;
-    height: 160vh;
-    width: 100vw;
+@media (min-width: 768px) and (max-width: 1024px) {
+    
 }
 
-.menu-sect3 {
-    display: block;
-    position: relative;
-    height: 100vh;
-    width: 100vw;
-    background-color: orange;
-}
-
-.menu-sect4 {
-    display: block;
-    position: relative;
-    height: 100vh;
-    width: 100vw;
-    background-color: purple;
-}
-
-.menu-sect5 {
-    display: block;
-    position: relative;
-    height: 100vh;
-    width: 100vw;
-    background-color: aqua;
-}
-
-.menu-sect6 { 
-    display: block;
-    position: relative;
-    height: 100vh;
-    width: 100vw;
-    background-color: violet;
-}
-
-.menu-sect7 {
-    display: block;
-    position: relative;
-    height: 100vh;
-    width: 100vw; 
-    background-color: red;
-}
-
+@media (min-width: 1025px) and (max-width: 1280px){ 
+    
+} 
 
 #menu-banner {
+    display: block;
     position: absolute;
     top: 0;
     width: 100%;
@@ -1207,6 +1205,7 @@ header.sticky .navBarsCH {
 
 .menu-header {
     display: block;
+    white-space: nowrap;
 }
 
 .menu-header h2 {
@@ -1248,12 +1247,13 @@ header.sticky .navBarsCH {
     display: inline-flex;
     max-width: 100%;
     height: 60vh;
-    top: 30vh;
     margin: 5vh;
 }
 
 .ml-column {
+    display: grid;
     margin: 1rem;
+    justify-content: center;
 }
 
 .row {
@@ -1272,6 +1272,7 @@ header.sticky .navBarsCH {
     left: 100px;
     border: 2px dashed #333;
     transition: all 0.3s ease-in-out;
+    overflow: hidden;
 }
 
 .item:hover {
@@ -1313,6 +1314,7 @@ header.sticky .navBarsCH {
 .item-left h3 {
     color: #fff;
     font-size: var(--font-size-base);
+    max-width: 85%;
 }
 
 .item-left h5 {
@@ -1320,17 +1322,26 @@ header.sticky .navBarsCH {
     margin: 5px;
     margin-left: 0;
     position: absolute;
-    width: 500px;
     max-height: 45px;
     overflow: hidden;
-    font-size: var(--font-size-sm);
+}
+
+.lg-desc-item {
+    display: inline-block;
+    max-width: 100%;
+    font-size: calc(var(--font-size-sm) - 4px);
+}
+
+.md-desc-item {
+    display: none;
+    max-width: 85%;
+    font-size: calc(var(--font-size-sm) - 2px);
 }
 
 .item-price {
     display: block;
     position: absolute;
     right: 0;
-    top: 0;
     padding: 5px;
     margin-right: 10px;
     font-weight: 700;
@@ -1339,14 +1350,184 @@ header.sticky .navBarsCH {
     font-family: 'Poppins', sans-serif;
 }
 
+.price-top {
+    display: inline-block;
+}
+
+.price-bottom {
+    display: none;
+}
+
+@media (max-width: 480px) { 
+    .item{
+        width: 230px;
+    }
+    .row {
+        width: 280px;
+    }
+    .ml-column {
+        margin: 0;
+        display: inline-block;
+        justify-content: start;
+    }
+    .container {
+        display: block;
+        margin: 1vh;
+    }
+    .lg-desc-item {
+        display: none;
+    }
+    .md-desc-item {
+        max-width: 200px;
+        display: block;
+    }
+    .price-top {
+        display: inline-block;
+        font-size: var(--font-size-sm);
+    }
+    .price-bottom {
+        display: none;
+    }
+    .item-price {
+        top: 0;
+    }
+} 
+
+@media (min-width: 481px) and (max-width: 767px) {
+    .item{
+        width: 400px;
+    }
+    .row {
+        width: 455px;
+    }
+    .ml-column {
+        margin: 0;
+    }
+    .container {
+        display: block;
+        margin: 1.5vh;
+    }
+    .lg-desc-item {
+        display: none;
+    }
+    .md-desc-item {
+        display: inline-block;
+    }
+    .price-top {
+        display: inline-block;
+        font-size: var(--font-size-sm);
+    }
+    .price-bottom {
+        display: none;
+    }
+    .item-price {
+        top: 0;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .item{
+        width: 600px;
+    }
+    .row {
+        width: 660px;
+    }
+    .ml-column {
+        margin: 0;
+    }
+    .container {
+        display: block;
+        margin: 2vh;
+    }
+    .lg-desc-item {
+        display: inline-block;
+    }
+    .md-desc-item {
+        display: none;
+    }
+    .price-top {
+        display: none;
+    }
+    .price-bottom {
+        display: inline-block;
+    }
+    .item-price {
+        bottom: 0;
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1280px){ 
+    .item{
+        width: 850px;
+    }
+    .row {
+        width: 960px;
+    }
+    .ml-column {
+        margin: 0;
+    }
+    .container {
+        display: block;
+        margin: 3vh;
+    }
+    .lg-desc-item {
+        display: inline-block;
+    }
+    .md-desc-item {
+        display: none;
+    }
+    .price-top {
+        display: inline-block;
+    }
+    .price-bottom {
+        display: none;
+    }
+    .item-price {
+        top: 0;
+    }
+} 
+
+@media (min-width: 1281px) { 
+    .item{
+        width: 500px;
+    }
+    .row {
+        width: 610px;
+    }
+    .container {
+        display: flex;
+        justify-content: center;
+        margin: 5vh;
+    }
+    .lg-desc-item {
+        display: inline-block;
+    }
+    .md-desc-item {
+        display: none;
+    }
+    .sm-desc-item {
+        display: none;
+    }
+    .price-top {
+        display: inline-block;
+    }
+    .price-bottom {
+        display: none;
+    }
+    .item-price {
+        top: 0;
+    }
+} 
+
 
 /* Menu Introduction */
 
-.menu-sect0 p {
+.menu-sect1 p {
+    display: block;
     position: relative;
     width: 70%;
     height: 300px;
-    top: 12.5%;
+    top: 20vh;
     margin: auto;
     padding: 1rem;
     font-family: 'Poppins', sans-serif;
@@ -1356,8 +1537,39 @@ header.sticky .navBarsCH {
     border: 2px dashed #333;
 }
 
-#welcome-tag {
+.welcome-tag {
     display: inline;
     font-size: var(--font-size-xxl) !important;
     font-family: 'Playfair Display', sans-serif;
+    color: #FFD700;
 }
+
+@media (max-width: 480px) { 
+    .menu-sect1 p {
+        font-size: var(--font-size-sm);
+    }
+} 
+
+@media (min-width: 481px) and (max-width: 767px) {
+    .menu-sect1 p {
+        font-size: var(--font-size-sm);
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .menu-sect1 p {
+        font-size: var(--font-size-base);
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1280px){ 
+    .menu-sect1 p {
+        font-size: var(--font-size-md);
+    }
+} 
+
+@media (min-width: 1281px) { 
+    .menu-sect1 p {
+        font-size: var(--font-size-md);
+    }
+} 

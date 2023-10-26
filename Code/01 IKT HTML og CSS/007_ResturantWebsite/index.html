@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/transparent/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/transparent/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/transparent/favicon-16x16.png">
+    <link rel="manifest" href="images/favicon/transparent/site.webmanifest">
+
     <link rel="stylesheet" type="text/css" href="css/style.css"/>
     <script defer src="script/app.js"></script>
     <script defer src="script/slider.js"></script>
@@ -232,8 +237,22 @@
 
         <section id="section-7"> <!--Contact-->
             <div class="contact-wrapper">
-                <p>Ready to pamper your pet with the finest dining experience? Visit us or get in touch with our friendly staff today to reserve a table at Velvet Whisker. Phone: [Phone number]. Email: [Email address]. We can't wait to whisk your pet away to a world of culinary bliss!</p>
-                <p>Follow us on social media for updates, adorable pet pictures, and behind-the-scenes moments: Facebook | Instagram | Twitter</p>
+                <p class="hidden fade-top">
+                    <span class="welcome-tag">Ready to pamper your pet with the finest dining experience?</span>
+                    <br> Visit us or get in touch with our friendly staff today to reserve a table at <span class="pricetag">Velvet Whisker.</span> 
+                    <br><br> 
+                    <span class="menu-tag">Phone:</span> +00 000 00 000
+                    <br> <span class="menu-tag">Email:</span> contact@velvetwhisker.com
+                    <br><br> 
+                    <span class="menu-tag">We can't wait to whisk your pet away to a world of culinary bliss!</span> 
+                </p>
+                <br>
+                <a href="#" class="hyperlink book-btn hidden fade-left" onclick="pageRedirect('booking.html')"> ── Book a Table ── </a>
+                <br><br>
+                <p class="hidden fade-bottom">
+                    Follow us on social media for updates, adorable pet pictures, and behind-the-scenes moments: 
+                    <br><a href="https://www.facebook.com/" class="hyperlink">Facebook</a> | <a href="https://www.instagram.com/" class="hyperlink hidden fade-bottom">Instagram</a> | <a href="https://twitter.com/" class="hyperlink hidden fade-bottom">Twitter</a>
+                </p>
             </div>
         </section>
 
