@@ -32,9 +32,16 @@
             <li><a href="#" onclick="pageRedirect('menu.html')">Menu</a></li>
             <li><a href="#" onclick="pageRedirect('booking.html')">Find a Table</a></li>
         </ul>
-        <div class="toggle-btn">
+        <button class="toggle-btn" onclick="togglebtn('.dropdown')">
             <img src="images/icons/bars-solid-white.png" class="navBars">
             <img src="images/icons/bars-solid-black.png" class="navBarsCH">
+        </button>
+        <div class="dropdown">
+            <div class="dropdown-content">
+                <a href="#" onclick="pageRedirect('menu.html')">Menu</a>
+                <br>
+                <a href="#" onclick="pageRedirect('booking.html')">Find a Table</a>
+            </div>
         </div>
     </header>
     <section class="banner">
@@ -180,7 +187,7 @@
                                 <h3>Review by notaracoon:</h3>
                             </div>
                         </div>
-                        <p><span class="quote">"</span> Velvet Whisker's dumpsters hold unexpected gourmet delights for the adventurous scavenger, offering a tantalizing dining experience that caters to the discerning palates of resourceful foragers like myself! <span class="quote">"</span></p>
+                        <p><span class="quote">"</span> Velvet Whisker's dumpsters hold unexpected gourmet delights for the adventurous scavenger, offering a tantalizing dining experience that caters to foragers like me! <span class="quote">"</span></p>
                     </div>
                     <div class="review">
                         <div class="profile">
@@ -210,7 +217,6 @@
 
         <section id="section-6"> <!--More info-->
             <div class="sect6-wrapper">
-                <div class="info-image"></div>
                 <div class="info-wrapper">
                     <h3>Our Ambience</h3>
                     <p>Step into a cozy and inviting atmosphere at Velvet Whisker. Our restaurant's interior is thoughtfully designed to create a relaxing environment for both pets and their human companions. Soft lighting, comfortable seating, and soothing background music ensure a stress-free and enjoyable dining experience for all.</p>
@@ -249,6 +255,19 @@
         </section>
 
     </main> 
+
+    <footer class="hidden fade-bottom">
+        <h2>Velvet Whisker</h3>
+        <h5>Quality Animal Dining</h3>
+        <h3>Isla de Pascua, Easter Island, Valparaíso, Chile</h3>
+        <br>
+        <h3>+00 000 00 000</h3>
+        <h3>contact@velvetwhisker.com</h3>
+        <a href="https://www.facebook.com/">Facebook</a> | <a href="https://www.instagram.com/">Instagram</a> | <a href="https://twitter.com/">Twitter</a>
+        <br><br>
+        <h3>&copy; Velvet Whisker 2023</h3>
+        <h5>Website made by Adrian H. Evjeberg</h3>
+    </footer>
 
 </body>
 </html>

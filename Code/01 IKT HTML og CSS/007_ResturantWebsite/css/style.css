@@ -53,7 +53,7 @@ body {
 }
 
 
-/* Intro
+/* Intro */
 
 .intro {
     position: fixed;
@@ -92,7 +92,6 @@ body {
     opacity: 0;
     transition: 0.5s ease-in-out;
 }
-*/
 
 /* Scroll Animations */
 
@@ -206,7 +205,7 @@ body {
 #section-6 {
     display: block;
     position: relative;
-    height: 100vh;
+    height: 130vh;
     width: 100%;
     overflow: hidden;
 }
@@ -214,7 +213,7 @@ body {
 #section-7 {
     display: block;
     position: relative;
-    height: 100vh;
+    height: 130vh;
     width: 100%;
     overflow: hidden;
 }
@@ -390,6 +389,8 @@ header.sticky ul li a {
 
 .toggle-btn {
     display: none;
+    border: none;
+    background: none;
 }
 
 .toggle-btn img {
@@ -418,6 +419,36 @@ header.sticky .navBarsCH {
     display: block;
 }
 
+.dropdown {
+    position: absolute;
+    display: none;
+    background: #fff;
+    width: 100%;
+    top: 70px;
+    height: fit-content + 20px;
+    left: 0;
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+}
+
+.dropdown-content {
+    display: block;
+    position: relative;
+    top: calc(50% - 50px);
+}
+
+.dropdown-content a {
+    font-size: var(--font-size-md);
+    display: block;
+    margin: 0 15px;
+    text-decoration: none;
+    color: #000;
+    font-family: 'Playfair Display', sans-serif;
+    letter-spacing: 2px;
+    font-weight: 500px;
+}
+
 @media screen and (max-width: 767px) {
     header ul {
         display: none;
@@ -431,7 +462,7 @@ header.sticky .navBarsCH {
     text-align: center;
     width: 20vw;
     height: 10vh;
-    top: 85%;
+    top: 80%;
     left: 50%;
     margin-left: -10vw;
     padding: 1rem;
@@ -452,7 +483,7 @@ header.sticky .navBarsCH {
 }
 
 #scroll-wrapper:hover {
-    top: 84%;
+    top: 79%;
     transition: top .2s ease-in-out;
 }
 
@@ -721,53 +752,47 @@ header.sticky .navBarsCH {
 
 .location-info {
     position: relative;
-    display: block;
-    margin: 5rem;
-    width: 600px;
-    height: 60%;
+    margin: 1rem;
 }
 
 .location-info img {
-    position: absolute;
+    position: relative;
     display: block;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
     border-radius: 10px;
+    width: 70%;
+    height: auto;
+    margin: 1rem;
 }
 
 .opening-times {
-    position: absolute;
+    position: relative;
     display: block;
-    width: 50%;
-    height: 60%;
     border: 2px dashed #333;
+    width: 40%;
+    margin: 2rem;
+    height: 60%;
+    text-align: center;
+    color: #fff;
+    padding: .5rem;
 }
 
 .opening-times img {
     position: relative;
     display: block;
-    width: 90%;
+    width: 70%;
     margin-left: auto;
     margin-right: auto;
-    height: auto;
 }
 
 .opening-times h3 {
-    position: absolute;
-    display: block;
-    color: #fff;
-    text-align: center;
-    font-size: var(--font-size-md);
+    font-size: var(--font-size-base);
 }
 
 .opening-times table {
     position: absolute;
-    width: 90%;
-    height: 50%;
-    bottom: 0;
-    left: 5%;
+    display: block;
+    bottom: .5rem;
+    font-size: var(--font-size-md);
 }
 
 .opening-times th {
@@ -776,69 +801,12 @@ header.sticky .navBarsCH {
 
 .opening-times tr {
     color: #fff; 
-    font-size: var(--font-size-lg);
 }
 
 .opening-times td {
     text-align: right;
     color: #FFD700; 
     margin: .2rem;
-}
-
-@media (max-width: 480px) { 
-    .opening-times tr {
-        font-size: var(--font-size-sm);
-    }  
-    .opening-times h3 {
-        font-size: var(--font-size-sm);
-    }  
-    .opening-times {
-        width: 70%;
-        height: 40%;
-    }
-    .location-info img {
-        display: none;
-    }
-} 
-
-@media (min-width: 481px) and (max-width: 767px) {
-    .opening-times tr {
-        font-size: var(--font-size-sm);
-    }  
-    .opening-times h3 {
-        font-size: var(--font-size-sm);
-    } 
-    .opening-times {
-        width: 70%;
-        height: 40%;
-    }
-    .location-info img {
-        display: none;
-    }   
-}
-
-@media (min-width: 768px) and (max-width: 1024px) {
-    .opening-times tr {
-        font-size: var(--font-size-sm);
-    } 
-    .opening-times h3 {
-        font-size: var(--font-size-sm);
-    }
-
-}
-
-@media (min-width: 1025px) and (max-width: 1280px) { 
-    .opening-times tr {
-        font-size: var(--font-size-md);
-    }  
-    .opening-times h3 {
-        font-size: var(--font-size-sm);
-    }  
-
-}
-
-@media (min-width: 1281px) { 
- 
 }
 
 .menu-i-wrapper {
@@ -1053,10 +1021,11 @@ header.sticky .navBarsCH {
 }
 
 .review div h3 {
-    display: block;
+    display: inline-block;
+    white-space: nowrap;
     color: #fff;
     margin: .5rem;
-    font-size: var(--font-size-base);
+    font-size: calc(var(--font-size-sm) + 1px);
     font-family: 'Playfair Display', sans-serif;
     font-weight: 600;
 }
@@ -1070,6 +1039,7 @@ header.sticky .navBarsCH {
     margin: .5rem;
     line-height: 1.2;
     letter-spacing: 0.05em;
+    text-align: left;
 }
 
 .quote {
@@ -1189,32 +1159,13 @@ header.sticky .navBarsCH {
     display: flex;
 }
 
-.info-image {
-    position: absolute;
-    width: 700px;
-    height: 550px;
-    left: 5%;
-    top: 0;
-
-    background-image: url(../images/misc/softlight.jpg);
-    background-size: cover;
-    background-attachment: center;
-    background-repeat: no-repeat;
-
-    transition: all 0.3s ease-in-out;
-}
-
-.info-image:hover {
-    transform: scale(1.01);
-    transition: all 0.3s ease-in-out;
-}
-
 .info-wrapper {
+    display: block;
     position: absolute;
-    width: 40%;
+    width: 70%;
     height: 50%;
     top: 0;
-    left: 45%;
+    right: 20%;
 }
 
 .info-wrapper h3 {
@@ -1283,6 +1234,64 @@ header.sticky .navBarsCH {
     transition: all 0.3s ease-in-out;
 }
 
+@media (max-width: 480px) { 
+    .contact-wrapper {
+        margin: 1rem;
+    }
+    .book-btn {
+        font-size: var(--font-size-md);
+    }
+    .welcome-tag {
+        font-size: var(--font-size-md);
+    }
+} 
+
+@media (min-width: 481px) and (max-width: 767px) {
+    .contact-wrapper {
+        margin: 2rem;
+    }
+    .book-btn {
+        font-size: var(--font-size-md);
+    }
+    .welcome-tag {
+        font-size: var(--font-size-md);
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .contact-wrapper {
+        margin: 3rem;
+    }
+    .book-btn {
+        font-size: var(--font-size-lg);
+    }
+    .welcome-tag {
+        font-size: var(--font-size-lg);
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1280px) { 
+    .contact-wrapper {
+        margin: 5rem;
+    }
+}
+
+@media (min-width: 1281px) { 
+    .contact-wrapper {
+        margin: 10rem;
+    }
+}
+
+footer {
+    color: #505050;
+    text-align: center;
+    margin: 1rem;
+}
+
+footer a {
+    text-decoration: none;
+}
+
 
 
 
@@ -1308,28 +1317,57 @@ header.sticky .navBarsCH {
     flex-direction: column;
     position: relative;
     width: 100%;
-    height: auto;
     min-height: 100vh;
 }
 
-@media (max-width: 480px) { 
-    
-} 
-
-@media (min-width: 481px) and (max-width: 767px) {
-    
+#sect1 {
+    height: 120vh;
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
-    
+#sect2 {
+    height: 120vh;
 }
 
-@media (min-width: 1025px) and (max-width: 1280px) { 
-    
-} 
+#sect3 {
+    height: 120vh;
+}
 
-@media (min-width: 1281px) { 
+#sect4 {
+    height: 120vh;
+}
+
+#sect5 {
+    height: 120vh;
+}
+
+#sect6 {
+    height: 120vh;
+}
+
+@media screen and (max-width: 1280px) { 
+    #sect1 {
+        height: 150vh;
+    }
     
+    #sect2 {
+        height: 150vh;
+    }
+    
+    #sect3 {
+        height: 150vh;
+    }
+    
+    #sect4 {
+        height: 150vh;
+    }
+    
+    #sect5 {
+        height: 150vh;
+    }
+    
+    #sect6 {
+        height: 150vh;
+    }
 } 
 
 #menu-banner {
@@ -1611,6 +1649,9 @@ header.sticky .navBarsCH {
     .item-price {
         top: 0;
     }
+    .menu-header h2 {
+        margin: .2rem;
+    }
 } 
 
 @media (min-width: 481px) and (max-width: 767px) {
@@ -1643,6 +1684,9 @@ header.sticky .navBarsCH {
     .item-price {
         top: 0;
     }
+    .menu-header h2 {
+        margin: .5rem;
+    }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
@@ -1674,6 +1718,9 @@ header.sticky .navBarsCH {
     .item-price {
         bottom: 0;
     }
+    .menu-header h2 {
+        margin: 1rem;
+    }
 }
 
 @media (min-width: 1025px) and (max-width: 1280px){ 
@@ -1704,6 +1751,9 @@ header.sticky .navBarsCH {
     }
     .item-price {
         top: 0;
+    }
+    .menu-header h2 {
+        margin: 1.5rem;
     }
 } 
 
@@ -1737,6 +1787,9 @@ header.sticky .navBarsCH {
     .item-price {
         top: 0;
     }
+    .menu-header h2 {
+        margin: 2rem;
+    }
 } 
 
 
@@ -1759,7 +1812,7 @@ header.sticky .navBarsCH {
 
 .welcome-tag {
     display: inline;
-    font-size: var(--font-size-xxl) !important;
+    font-size: var(--font-size-xl);
     font-family: 'Playfair Display', sans-serif;
     color: #FFD700;
 }

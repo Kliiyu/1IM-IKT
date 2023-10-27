@@ -7,6 +7,15 @@ function pageRedirect(page) {
     }, 800); 
 }
 
+function togglebtn(obj) {
+    let el = document.querySelector(obj);
+    if (el.style.display == 'none') {
+        el.style.display = 'block'
+    } else {
+        el.style.display = 'none'
+    }
+}
+
 window.addEventListener("DOMContentLoaded", ()=>{
     let intro = document.querySelector('.intro');
     let logo = document.querySelector('.logo-header');

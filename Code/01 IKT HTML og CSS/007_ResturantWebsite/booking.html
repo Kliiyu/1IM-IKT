@@ -10,16 +10,33 @@
     <title>Booking</title>
 </head>
 <body>
+    
+    <div class="intro">
+        <h1 class="logo-header">
+            <span class="i-logo">Velvet</span> <span class="i-logo">Whisker</span>
+        </h1>
+    </div>
 
     <header>
-        <a href="index.html">
+        <a href="#"onclick="pageRedirect('index.html')">
             <img src="images/logo/VWLogoNoSubTxt.png" class="logo" style="width: auto; height: 60px;">
             <img src="images/logo/VelvetWhiskerLogoBlack.png" class="logoCH" style="width: auto; height: 60px;">
         </a>
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="booking.html">Find a Table</a></li>
+            <li><a href="#" onclick="pageRedirect('index.html')">Home</a></li>
+            <li><a href="#" onclick="pageRedirect('menu.html')">Menu</a></li>
         </ul>
+        <button class="toggle-btn" onclick="togglebtn('.dropdown')">
+            <img src="images/icons/bars-solid-white.png" class="navBars">
+            <img src="images/icons/bars-solid-black.png" class="navBarsCH">
+        </button>
+        <div class="dropdown">
+            <div class="dropdown-content">
+                <a href="#" onclick="pageRedirect('index.html')">Home</a>
+                <br>
+                <a href="#" onclick="pageRedirect('menu.html')">Menu</a>
+            </div>
+        </div>
     </header>
     <section class="banner"></section>
     

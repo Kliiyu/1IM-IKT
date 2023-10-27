@@ -26,9 +26,16 @@
             <li><a href="#" onclick="pageRedirect('index.html')">Home</a></li>
             <li><a href="#" onclick="pageRedirect('booking.html')">Find a Table</a></li>
         </ul>
-        <div class="toggle-btn">
+        <button class="toggle-btn" onclick="togglebtn('.dropdown')">
             <img src="images/icons/bars-solid-white.png" class="navBars">
             <img src="images/icons/bars-solid-black.png" class="navBarsCH">
+        </button>
+        <div class="dropdown">
+            <div class="dropdown-content">
+                <a href="#" onclick="pageRedirect('index.html')">Home</a>
+                <br>
+                <a href="#" onclick="pageRedirect('booking.html')">Find a Table</a>
+            </div>
         </div>
     </header>
     
@@ -42,7 +49,7 @@
         <p><span class="welcome-tag">Welcome to Velvet Whisker</span>, the finest dining experience for our beloved animal friends. Indulge your furry companions with our delectable creations specially crafted to satisfy their discerning palates. Our menu is carefully designed to provide nourishment and delight, ensuring an unforgettable dining adventure for your beloved pets.</p>
     </section>
     
-    <section class="menu-section"> <!--Appetizer-->
+    <section id="sect1" class="menu-section"> <!--Appetizer-->
         <div class="menu-header">
             <h2 class="hidden fade-top">── Entrée ──</h2>
             <div class="mh-banner"></div>
@@ -153,7 +160,7 @@
         </div>
     </section> 
 
-    <section class="menu-section"> <!--Main Course-->
+    <section id="sect2"  class="menu-section"> <!--Main Course-->
         <div class="menu-header">
             <h2 class="hidden fade-top">── Main Course ──</h2>
             <div class="mh-banner"></div>
@@ -264,7 +271,7 @@
         </div>
     </section> 
 
-    <section class="menu-section"> <!--Dessert-->
+    <section id="sect3"  class="menu-section"> <!--Dessert-->
         <div class="menu-header">
             <h2 class="hidden fade-top">── Delicacies ──</h2>
             <div class="mh-banner"></div>
@@ -375,7 +382,7 @@
         </div>
     </section> 
 
-    <section class="menu-section"> <!--Drinks-->
+    <section id="sect3"  class="menu-section"> <!--Drinks-->
         <div class="menu-header">
             <h2 class="hidden fade-top">── Beverages ──</h2>
             <div class="mh-banner"></div>
@@ -486,7 +493,7 @@
         </div>
     </section> 
 
-    <section class="menu-section"> <!--Wine-->
+    <section id="sect4"  class="menu-section"> <!--Wine-->
         <div class="menu-header">
             <h2 class="hidden fade-top">── Wine ──</h2>
             <div class="mh-banner"></div>
@@ -597,7 +604,7 @@
         </div>
     </section>
 
-    <section class="menu-section"> <!--Human Main Course-->
+    <section id="sect5"  class="menu-section"> <!--Human Main Course-->
         <div class="menu-header">
             <h2 class="hidden fade-top">── Human Food ──</h2>
             <div class="mh-banner"></div>
@@ -708,7 +715,7 @@
         </div>
     </section>
 
-    <section class="menu-section"> <!--Human Drinks-->
+    <section id="sect6"  class="menu-section"> <!--Human Drinks-->
         <div class="menu-header">
             <h2 class="hidden fade-top">── Human Beverages ──</h2>
             <div class="mh-banner"></div>
