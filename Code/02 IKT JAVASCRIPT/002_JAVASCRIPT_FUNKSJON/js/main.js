@@ -22,17 +22,13 @@ function updateText() {
     } else {
         scoreBoxNum.innerHTML = abbreviateNumber(clickCount);
     }
-    comboBoxNum.innerHTML = comboCount;
+    comboBoxNum.innerHTML = "x" + comboCount;
 }
 
 let lastClickTime = null
 
 let clickCount = 0;
 let comboCount = 0;
-
-let baseMultiplier = 1;
-let upgraderMultiplier = 1;
-let comboMultiplier = comboCount;
 
 button.addEventListener('click', () => { lastClickTime = new Date(); }); 
 
@@ -68,6 +64,10 @@ function updateSeconds() {
 setInterval(updateSeconds, 1000); 
 
 function manClick() {
+    let baseMultiplier = 1;
+    let upgradeMultiplier = 1;
+    let comboMultiplier = comboCount;
+
     let secondsPassed = checkSecondsPassed();
     if (secondsPassed < 1) {
         lastClickTime = null;
@@ -79,8 +79,7 @@ function manClick() {
         }
     }
 
-    let multiplier = baseMultiplier + upgradeMultiplier + comboMultiplier
-    clickCount += 1 * multiplier;
+    clickCount += 1 * (comboMultiplier + upgradeMultiplier + baseMultiplier);
     clickCount = Math.floor(clickCount);
     updateText();
 }
