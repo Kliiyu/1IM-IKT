@@ -59,3 +59,4 @@ console.log("Total pris: " + totalPris)
 var avslagsPris = (pris - avslag) * antall
 console.log("Avslagspris: " + avslagsPris)
 
+
