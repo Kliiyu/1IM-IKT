@@ -17,18 +17,18 @@ function abbreviateNumber(number) {
 }
 
 function updateText() {
-    if (clickCount == 1) {
-        scoreBoxNum.innerHTML = abbreviateNumber(clickCount);
+    if (score == 1) {
+        scoreBoxNum.innerHTML = abbreviateNumber(score);
     } else {
-        scoreBoxNum.innerHTML = abbreviateNumber(clickCount);
+        scoreBoxNum.innerHTML = abbreviateNumber(score);
     }
-    comboBoxNum.innerHTML = "x" + comboCount;
+    comboBoxNum.innerHTML = "x" + comboMultiplier();
 }
 
 let lastClickTime = null
 
+let score = 0;
 let clickCount = 0;
-let comboCount = 0;
 
 button.addEventListener('click', () => { lastClickTime = new Date(); }); 
 
@@ -52,7 +52,7 @@ function updateSeconds() {
     if (lastClickTime !== null) { 
         let secondsPassed = checkSecondsPassed();
         if (secondsPassed == 1) {
-            comboCount = 0;
+            clickCount = 0;
             console.log("Combo Reset! " + secondsPassed + "s");
             updateText();
         } else if (secondsPassed == 5) {
@@ -63,23 +63,52 @@ function updateSeconds() {
 }
 setInterval(updateSeconds, 1000); 
 
-function manClick() {
-    let baseMultiplier = 1;
-    let upgradeMultiplier = 1;
-    let comboMultiplier = comboCount;
+function playSound(path) {
+    if (path == 'c1') {
+        path = 'soundFX/combo/combo1.mp3'
+    } else if (path == 'c2') {
+        path = 'soundFX/combo/combo2.mp3'
+    } else if (path == 'c3') {
+        path = 'soundFX/combo/combo3.mp3'
+    } else if (path == 'c4') {
+        path = 'soundFX/combo/combo4.mp3'
+    } else if (path == 'c5') {
+        path = 'soundFX/combo/combo5.mp3'
+    }
 
+    var sound = new Audio(path);
+    if (path != '') {sound.play();}
+}
+
+function comboMultiplier() {
+    let multiplier = 1
+    if (clickCount >= 20 && clickCount < 50) {
+        multiplier = 2
+        if (clickCount == 20) {playSound('c1'); updateFace('normal')}
+    } else if (clickCount >= 50 && clickCount < 100) {
+        multiplier = 3
+        if (clickCount == 50) {playSound('c2'); updateFace('good')}
+    } else if (clickCount >= 100 && clickCount < 500) {
+        multiplier = 4
+        if (clickCount ==100) {playSound('c3')}
+    } else if (clickCount >= 500) {
+        multiplier = 5
+        if (clickCount == 500) {playSound('c4')}
+    } else {multiplier = 1}
+    return multiplier
+}
+
+watcher.addEventListener('myVariableChanged', myFunction);
+
+
+function increaseScore() {
     let secondsPassed = checkSecondsPassed();
     if (secondsPassed < 1) {
         lastClickTime = null;
-        comboCount += 1;
-        if (comboCount >= 25) {
-            updateFace('good');
-        } else {
-            updateFace('normal');
-        }
+        clickCount += 1;
     }
 
-    clickCount += 1 * (comboMultiplier + upgradeMultiplier + baseMultiplier);
-    clickCount = Math.floor(clickCount);
+    score += 1 * (comboMultiplier());
+    score = Math.floor(score);
     updateText();
 }
