@@ -1,0 +1,20 @@
+@import url('https://fonts.cdnfonts.com/css/modern-no-20');
+
+#bgVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+#centerText {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Modern No. 20', sans-serif;
+    font-size: xxx-large;
+    mix-blend-mode: difference;
+    filter: invert(1);
+}
