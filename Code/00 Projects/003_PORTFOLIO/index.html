@@ -6,6 +6,7 @@
 
     <link rel="stylesheet" type="text/css" href="css/style.css"/>
     <script defer src="script/main.js"></script>
+    <script defer src="script/vanilla-tilt.js"></script>
     
     <title>Home</title>
 </head>
@@ -25,7 +26,7 @@
 
         <div class="nav">
             <ul>
-                <li><a href="#" class="pageButton" onclick="pageRedirect('about.html')">OM MEG</a></li>
+                <li><a href="#section-1" class="pageButton">OM MEG</a></li>
                 <li><a href="#" class="pageButton" onclick="pageRedirect('projects.html')">PROSJEKTER</a></li>
             </ul>
         </div>  
@@ -39,18 +40,18 @@
     <section class="banner">
         <div class="scrolling_text">
             <div class="text">
-                <span>Instagram</span>
-                <span>Linkedin</span>
+                <span><a href="">Instagram</a></span>
+                <span><a href="">Linkedin</a></span>
                 <span>Adrian Hiim Evjeberg</span>
-                <span>Github</span>
-                <span>Youtube</span>
+                <span><a href="">Github</a></span>
+                <span><a href="">Youtube</a></span>
             </div>
             <div class="text">
-                <span>Instagram</span>
-                <span>Linkedin</span>
+                <span><a href="">Instagram</a></span>
+                <span><a href="">Linkedin</a></span>
                 <span>Adrian Hiim Evjeberg</span>
-                <span>Github</span>
-                <span>Youtube</span>
+                <span><a href="">Github</a></span>
+                <span><a href="">Youtube</a></span>
             </div>
         </div>
         <div id="scroll-wrapper">
@@ -59,17 +60,25 @@
     </section>
 
     <main id="section-1">
+      <div class="about-wrapper">
+        <div class="mainAbout">
+            <h3 class="hidden fade-left">Litt om meg</h3>
+            <p class="hidden fade-left" data-tilt data-tilt-max="10">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla luctus metus eget leo lobortis, facilisis fringilla mauris tincidunt. Aliquam vitae lacus vel eros tincidunt pharetra ut eget eros. Suspendisse in dapibus magna, id aliquet lorem. Fusce in mi pellentesque, varius ante a, rutrum nibh. Nulla pulvinar ipsum eu egestas dignissim. Pellentesque bibendum tellus et interdum eleifend. Curabitur laoreet orci feugiat blandit pharetra. Cras eu felis tortor. Morbi non erat euismod, laoreet neque sit amet, ullamcorper risus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris placerat cursus justo, tempor pulvinar ligula faucibus eu. Fusce commodo maximus mauris, vel lobortis lectus placerat ut.</p>
+            <div class="downloadAbout hidden fade-bottom"><a style="text-decoration: none;" download href="images/Landskap.jpg">Les mer</a></div>
+        </div>
+      </div>
+
       <ul class="list-component">
-        <h2 class="__section">ARBEIDSEFARING</h2>
+        <h2 class="__section hidden fade-top">ARBEIDSEFARING</h2>
         <li class="__item">
-          <div class="card-component hidden fade-left">
+          <div class="card-component hidden fade-left" data-tilt data-tilt-scale="1.01" data-tilt-axis="y">
             <h2 class="__year">Mars 2020 – d.d.</h2>
             <h1 class="__title">Butikkmedarbeider, Amazoon AS avdeling Pets Hundvåg</h1>
             <p class="__text">Kundebehandling, varemottak, klargjøring av butikk for åpning og stenging, kasseopgjør.</p>
           </div>
         </li>
         <li class="__item">
-          <div class="card-component hidden fade-left">
+          <div class="card-component hidden fade-left" data-tilt data-tilt-scale="1.01" data-tilt-axis="y">
             <h2 class="__year">April 2023</h2>
             <h1 class="__title">Arbeidspraksis, Avinor på Sola Flyplass</h1>
             <p class="__text">Diverse arbeid forbundet til IT.</p>
@@ -77,23 +86,23 @@
         </li>
       </ul>
       <ul class="list-component">
-        <h2 class="__section">UTDANNING</h2>
+        <h2 class="__section hidden fade-top">UTDANNING</h2>
         <li class="__item">
-          <div class="card-component hidden fade-left">
+          <div class="card-component hidden fade-left" data-tilt data-tilt-scale="1.01" data-tilt-axis="y">
             <h2 class="__year">2023 - d.d.</h2>
             <h1 class="__title">Vågen VGS</h1>
             <p class="__text">Videregående skole VG1, Informasjonsteknologi og mediaproduksjon</p>
           </div>
         </li>
         <li class="__item">
-          <div class="card-component hidden fade-left">
+          <div class="card-component hidden fade-left" data-tilt data-tilt-scale="1.01" data-tilt-axis="y">
             <h2 class="__year">2020 - 2023</h2>
             <h1 class="__title">Lunde skole</h1>
             <p class="__text">Grunnskole</p>
           </div>
         </li>
         <li class="__item">
-          <div class="card-component hidden fade-left">
+          <div class="card-component hidden fade-left" data-tilt data-tilt-scale="1.01" data-tilt-axis="y">
             <h2 class="__year">2013 - 2020</h2>
             <h1 class="__title">Skeie skole</h1>
             <p class="__text">Grunnskole</p>
@@ -101,5 +110,6 @@
         </li>
       </ul>
     </main>
+    <script type="text/javascript" src="vanilla-tilt.js"></script>
 </body>
 </html>

@@ -246,6 +246,7 @@ header ul li h3 {
     font-family: 'Playfair Display', sans-serif;
     transition: top .2s ease-in-out;
     z-index: 2;
+    animation: animate_scrollArrow 2s linear infinite;
 }
 
 #scroll-wrapper img {
@@ -254,9 +255,15 @@ header ul li h3 {
     width: auto;
 }
 
-#scroll-wrapper:hover {
-    top: 85%;
-    transition: top .2s ease-in-out;
+@keyframes animate_scrollArrow {
+    from {
+      transform: translate3d(0, -10%, 0);
+      opacity: 1;
+    }
+    to {
+      transform: translate3d(0, 20%, 0);
+      opacity: 0;
+    }
 }
 
 .name {
@@ -276,6 +283,20 @@ header ul li h3 {
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
+}
+
+.banner::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(
+        0deg,
+        #1f1f1f 0%,
+        rgba(31, 31, 31, 0) 100%
+    )
 }
 
 .scrolling_text {
@@ -299,6 +320,17 @@ header ul li h3 {
 
 .text span {
     margin: 0 40px;
+}
+
+.text a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.text a:hover {
+    -webkit-text-stroke: 1px white;
+    color: transparent;
+    transition: all .1s ease-in-out;
 }
 
 @keyframes animate_text {
@@ -353,6 +385,11 @@ header ul li h3 {
     transition: all 0.3s ease-in-out;
 }
 
+.card-component:hover .__title {
+    color: cornflowerblue;
+    transition: all 0.3s ease-in-out;
+}
+
 .card-component .__year {
     font-size: 1em;
     color: #fff;
@@ -365,4 +402,50 @@ header ul li h3 {
 
 .card-component .__text {
     color: rgb(218, 218, 218);
+}
+
+.about-wrapper {
+    width: 95%;
+    height: 100vh;
+    position: absolute;
+    top: 100vh;
+    margin: auto;
+}
+
+.mainAbout {
+    padding: 10rem;
+    color: #fff;
+    width: 50%;
+}
+
+.mainAbout h3 {
+    margin: 1em;
+    font-size: var(--font-size-xl);
+    font-family: 'Playfair Display', sans-serif;
+}
+
+.mainAbout p {
+    margin: 1em;
+    font-size: var(--font-size-sm);
+    font-family: 'Poppins', sans-serif;
+}
+
+.downloadAbout {
+    width: fit-content;
+    color: #fff;
+    transition: all .3s ease-in-out;
+    border: 1px solid gray;
+    padding: 10px;
+    margin: 2rem;
+}
+
+.downloadAbout:hover {
+    box-shadow: 0px 0px 30px rgba(0,0,0, 0.6);
+    transition: all .3s ease-in-out;
+}
+
+.downloadAbout a {
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-size: var(--font-size-sm);
 }
