@@ -10,6 +10,12 @@
     <title>Home</title>
 </head>
 <body>
+    <!--<div class="intro">
+        <h1 class="logo-header">
+            <span class="i-logo"><img src="images/logo/AHELogo.png" class="logo" style="width: auto; height: 150px;"></span>
+        </h1>
+    </div>-->
+
     <header> 
         <div class="logo">
             <a href="#"onclick="pageRedirect('index.html')">
@@ -18,15 +24,15 @@
         </div>
 
         <div class="nav">
-            <ul class="bgInvert">
-                <li><h3>ABOUT</h3></li>
-                <li><h3>WORK</h3></li>
+            <ul>
+                <li><h3 class="pageButton" onclick="pageRedirect('about.html')">OM MEG</h3></li>
+                <li><h3 class="pageButton" onclick="pageRedirect('projects.html')">PROSJEKTER</h3></li>
             </ul>
         </div>  
 
         <div class="contact">
-            <ul class="bgInvert">
-                <li><h3>CONTACT</h3></li>
+            <ul>
+                <li><h3 class="pageButton">KONTAKT</h3></li>
             </ul>
         </div>
     </header>
@@ -48,8 +54,51 @@
             </div>
         </div>
         <div id="scroll-wrapper">
-            <a href="#"><img src="images/icons/arrow-down.png" alt="scroll icon"></a>
+            <a href="#section-1"><img src="images/icons/arrow-down.png" alt="scroll icon"></a>
         </div>
     </section>
+
+    <main id="section-1">
+        <ul class="list-component">
+            <li class="__item hidden fade-left">
+              <div class="card-component">
+                <h2 class="__year">Mars 2020 – d.d.</h2>
+                <h1 class="__title">Butikkmedarbeider, Amazoon AS avdeling Pets Hundvåg</h1>
+                <p class="__text">Kundebehandling, varemottak, klargjøring av butikk for åpning og stenging, kasseopgjør.</p>
+              </div>
+            </li>
+            <li class="__item hidden fade-left">
+              <div class="card-component">
+                <h2 class="__year">April 2023</h2>
+                <h1 class="__title">Arbeidspraksis, Avinor på Sola Flyplass</h1>
+                <p class="__text">Diverse arbeid forbundet til IT.</p>
+              </div>
+            </li>
+          </ul>
+          <ul class="list-component">
+            <li class="__item hidden fade-left">
+              <div class="card-component">
+                <h2 class="__year">2013 - 2020</h2>
+                <h1 class="__title">Skeie skole</h1>
+                <p class="__text">Grunnskole</p>
+              </div>
+            </li>
+            <li class="__item hidden fade-left">
+              <div class="card-component">
+                <h2 class="__year">2020 - 2023</h2>
+                <h1 class="__title">Lunde skole</h1>
+                <p class="__text">Grunnskole</p>
+              </div>
+            </li>
+            <li class="__item hidden fade-left">
+                <div class="card-component">
+                  <h2 class="__year">2023 - d.d.</h2>
+                  <h1 class="__title">Vågen VGS</h1>
+                  <p class="__text">Videregående skole VG1, Informasjonsteknologi og mediaproduksjon</p>
+                </div>
+              </li>
+          </ul>
+        </div>
+    </main>
 </body>
 </html>
