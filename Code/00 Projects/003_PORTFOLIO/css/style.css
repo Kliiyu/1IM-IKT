@@ -18,6 +18,7 @@
 
 
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 :root {
     --scrollAnimSpeed: 0.5s;
@@ -42,7 +43,7 @@ html {
 }
 
 body {
-    background-color: #fff;
+    background-color: #1f1f1f;
     overflow-x: hidden;
     max-height: 200vh;
 }
@@ -225,6 +226,8 @@ header ul li h3 {
     font-weight: 700;
     color: #fff;
     font-family: 'Playfair Display', sans-serif;
+    cursor: pointer;
+    text-decoration: none;
     transition: all .3s ease-in-out;
 }
 
@@ -310,22 +313,31 @@ header ul li h3 {
 .list-component {
     border-left: 1px solid gray;
     list-style: none;
-    margin-left: 10px;
+    margin-left: 60%;
+    margin-top: 1em;
     padding-top: 20px
-  }
-   /* https://www.computerhope.com/issues/ch001705.htm */
-  .list-component .__item {
+}
+
+.list-component .__section {
+    margin: 1rem;
+    font-size: xx-large;
+    color: #fff;
+    font-family: 'Playfair Display', sans-serif;
+}
+
+.list-component .__item {
     background: url('../images/icons/circle-solid.svg') no-repeat top left;
     background-position: top left;
     padding: 0 0 4px 60px;
     margin-left: 1em;
     position: relative;
-    right: 67px;
+    right: 25px;
     margin-bottom: 10px;
     top: 10px;
-  }
-  
-  .card-component {
+    transition: all 0.3s ease-in-out;
+}
+
+.card-component {
     border: 1px solid gray;
     border-radius: 5px;
     padding: 1em;
@@ -333,16 +345,24 @@ header ul li h3 {
     font-family: Arial;
     position: relative;
     bottom: 20px;
-  }
-  
-  .card-component .__year {
+    font-family: 'Poppins', sans-serif;
+}
+
+.card-component:hover {
+    box-shadow: 0px 0px 30px rgba(0,0,0, 0.6);
+    transition: all 0.3s ease-in-out;
+}
+
+.card-component .__year {
     font-size: 1em;
-  }
-  
-  .card-component .__title {
+    color: #fff;
+}
+
+.card-component .__title {
     font-size: 1.3em;
-  }
-  
-  .card-component .__text {
-    color: gray;
-  }
+    color: #fff;
+}
+
+.card-component .__text {
+    color: rgb(218, 218, 218);
+}
