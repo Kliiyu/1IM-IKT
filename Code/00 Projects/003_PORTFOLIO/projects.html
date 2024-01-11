@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="css/projects.css"/>
     <script defer src="script/main.js"></script>
     
-    <title>Projects</title>
+    <title>Prosjekter</title>
 </head>
 <body>
     <div class="intro">
@@ -26,14 +26,14 @@
 
         <div class="nav">
             <ul>
-                <li><a href="#" class="pageButton" onclick="pageRedirect('about.html')">OM MEG</a></li>
+                <li><a href="./index.html#section-1" class="pageButton">OM MEG</a></li>
                 <li><a href="#" class="pageButton" onclick="pageRedirect('projects.html')">PROSJEKTER</a></li>
             </ul>
         </div>  
 
         <div class="contact">
             <ul>
-                <li><a href="#" class="pageButton">KONTAKT</a></li>
+                <li><a href="#" class="pageButton" onclick="pageRedirect('contact.html')">KONTAKT</a></li>
             </ul>
         </div>
     </header>
@@ -42,40 +42,94 @@
         <div class="row">
             <div class="leftcolumn">
               <div class="card">
-                <h2>TITLE HEADING</h2>
-                <h5>Title description, Dec 7, 2017</h5>
-                <div class="fakeimg" style="height:200px;">Image</div>
-                <p>Some text..</p>
+                <h2>Kortfilm - living the dream</h2>
+                <h5>Skoleoppgave, lag en kortfilm på en uke, Nov 11, 2023</h5>
+                <div class="fakeimg" style="height:200px;">Bilde</div>
+                <p>Se kortfilmen på <a class="projectHyperlink" href="https://youtu.be/QH3LYL5jtCs">Youtube</a></p>
               </div>
               <div class="card">
-                <h2>TITLE HEADING</h2>
-                <h5>Title description, Sep 2, 2017</h5>
-                <div class="fakeimg" style="height:200px;">Image</div>
-                <p>Some text..</p>
-              </div>
+                <h2>Fotoprosjekt</h2>
+                <h5>Skoleoppgave, ta bilder i flere forskjellige stiler, Sep 15, 2023</h5>
+                <div class="container">
+                  <div class="slider-wrapper">
+                    <div class="slider">
+                      <img id="slide-1" src="./images/fotoprosjekt/KortLukkertid.jpg" />
+                      <img id="slide-2" src="./images/fotoprosjekt/Landskap.jpg" />
+                      <img id="slide-3" src="./images/fotoprosjekt/SvartHvitt.jpg" />
+                      <img id="slide-4" src="./images/fotoprosjekt/LangLukkertid.jpg" />
+                      <img id="slide-5" src="./images/fotoprosjekt/Macro.jpg" />
+                      <img id="slide-6" src="./images/fotoprosjekt/Form.jpg" />
+                    </div>
+                    <div class="slider-nav">
+                      <a href="#slide-1"></a>
+                      <a href="#slide-2"></a>
+                      <a href="#slide-3"></a>
+                      <a href="#slide-4"></a>
+                      <a href="#slide-5"></a>
+                      <a href="#slide-6"></a>
+                    </div>
+                  </div>
+                </div>
+              </div>          
             </div>
             <div class="rightcolumn">
-              <div class="card">
-                <h2>About Me</h2>
-                <div class="fakeimg" style="height:100px;">Image</div>
-                <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
+              <div class="card" data-tilt data-tilt-scale="1.02" data-tilt-max="2" style="transform-style: preserve-3d; transform: perspective(1000px);">
+                <h2 style="transform: translateZ(20px);">Om Meg</h2>
+                <p style="transform: translateZ(20px);">Text om meg i culpa qui officia deserunt mollit anim..</p>
               </div>
-              <div class="card">
-                <h3>Popular Post</h3>
-                <div class="fakeimg">Image</div><br>
-                <div class="fakeimg">Image</div><br>
-                <div class="fakeimg">Image</div>
+              <div class="card" data-tilt data-tilt-scale="1.02" data-tilt-max="2" style="transform-style: preserve-3d; transform: perspective(1000px);">
+                <h3 style="transform: translateZ(20px);">Nylige Prosjekter</h3>
+                <div class="fakeimg" style="transform: translateZ(20px);">Bilde</div><br>
+                <div class="fakeimg" style="transform: translateZ(20px);">Bilde</div><br>
+                <div class="fakeimg" style="transform: translateZ(20px);">Bilde</div>
               </div>
-              <div class="card">
-                <h3>Follow Me</h3>
-                <p>Some text..</p>
+              <div class="card" data-tilt data-tilt-scale="1.02">
+                <h3 style="transform: translateZ(20px);">Følg meg</h3>
+                <ul class="social-icon">
+                  <li class="social-icon__item"><a class="social-icon__link" href="#">
+                      <ion-icon name="logo-youtube"></ion-icon>
+                    </a></li>
+                  <li class="social-icon__item"><a class="social-icon__link" href="#">
+                      <ion-icon name="logo-github"></ion-icon>
+                    </a></li>
+                  <li class="social-icon__item"><a class="social-icon__link" href="#">
+                      <ion-icon name="logo-linkedin"></ion-icon>
+                    </a></li>
+                  <li class="social-icon__item"><a class="social-icon__link" href="#">
+                      <ion-icon name="logo-instagram"></ion-icon>
+                    </a></li>
+                </ul>
               </div>
             </div>
         </div>
-          
-        <div class="footer">
-            <h2>Footer</h2>
-        </div>
+
+        <footer class="footer">
+          <ul class="social-icon">
+            <li class="social-icon__item"><a class="social-icon__link" href="#">
+                <ion-icon name="logo-youtube"></ion-icon>
+              </a></li>
+            <li class="social-icon__item"><a class="social-icon__link" href="#">
+                <ion-icon name="logo-github"></ion-icon>
+              </a></li>
+            <li class="social-icon__item"><a class="social-icon__link" href="#">
+                <ion-icon name="logo-linkedin"></ion-icon>
+              </a></li>
+            <li class="social-icon__item"><a class="social-icon__link" href="#">
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a></li>
+          </ul>
+          <ul class="menu">
+            <li class="menu__item"><a class="menu__link" href="#" onclick="pageRedirect('index.html')">Hjem</a></li>
+            <li class="menu__item"><a class="menu__link" href="#" onclick="pageRedirect('index.html')">Om Meg</a></li>
+            <li class="menu__item"><a class="menu__link" href="#" onclick="pageRedirect('projects.html')">Prosjekter</a></li>
+            <li class="menu__item"><a class="menu__link" href="#" onclick="pageRedirect('contact.html')">Kontakt</a></li>
+          </ul>
+          <p>&copy;2024 Adrian Hiim Evjeberg | All Rights Reserved</p>
+        </footer>
     </div>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script type="text/javascript" src="./script/vanilla-tilt.js"></script>
 </body>
 </html>
