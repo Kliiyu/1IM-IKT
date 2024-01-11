@@ -66,6 +66,14 @@ body {
     padding: 20px;
 }
 
+.ny-img {
+    margin: .1rem;
+    width: 100%;
+    padding: 5px;
+    background-color: #333;
+    border-radius: 10px;
+}
+
 .card {
     background-color: #1f1f1f;
     padding: 20px;
@@ -157,4 +165,34 @@ body {
 .projectHyperlink:hover {
     color: cornflowerblue;
     transition: all .3s ease-in-out;
+}
+
+.imgwrapper {
+    margin: 20px;
+}
+
+.kortfilmImg {
+    object-fit: cover;
+    width: 200px;
+    height: 200px;
+    transition: all .2s ease;
+}
+
+.mopImg {
+    object-fit: cover;
+    width: auto;
+    height: 280px;
+    transition: all .2s ease;
+}
+
+.netImg {
+    object-fit: cover;
+    width: 200px;
+    height: auto;
+    transition: all .2s ease;
+}
+
+.mopImg:hover, .kortfilmImg:hover, .netImg:hover {
+    scale: 2.2;
+    transition: all .2s ease;
 }

@@ -7,6 +7,21 @@ function pageRedirect(page) {
     }, 800); 
 }
 
+function flipCard() {
+    let cardFront = document.getElementById('bcard-front');
+    let cardBack = document.getElementById('bcard-back');
+    var bdisplay = getComputedStyle(cardBack).display;
+
+    if (bdisplay == "none") {
+        cardFront.style.display = "none";
+        cardBack.style.display = "flex";
+    } else {
+        cardBack.style.display = "none";
+        cardFront.style.display = "flex";
+    }
+}
+
+
 window.addEventListener("DOMContentLoaded", ()=>{
     let intro = document.querySelector('.intro');
     let logo = document.querySelector('.logo-header');
