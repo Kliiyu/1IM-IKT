@@ -4,5 +4,11 @@
     "desc": "it is holy, ask Jesus",
     "category": "food",
     "price": "200"
+  },
+  "002": {
+    "name": "Sindre",
+    "desc": "Sindre",
+    "category": "Sindre",
+    "price": "5"
   }
 }

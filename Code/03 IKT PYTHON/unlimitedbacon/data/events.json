@@ -1,7 +1,8 @@
 {
   "Mysterious Altar Room": {
     "desc": "As you enter a dimly lit room, you notice a mysterious altar at its center, radiating an otherworldly energy.",
-    "Choices": {
+    "id": "001",
+    "choices": {
       "F": "Investigate the altar closely.",
       "G": "Circle around the altar cautiously.",
       "H": "Inspect the room's surroundings for hidden passages.",
@@ -10,7 +11,8 @@
   },
   "Enchanted Fountain": {
     "desc": "In a chamber adorned with ancient runes, a magical fountain sparkles with ethereal water.",
-    "Choices": {
+    "id": "002",
+    "choices": {
       "F": "Drink from the fountain.",
       "G": "Collect water in a vial for later use.",
       "H": "Splash the water on your face for a wake-up boost.",
@@ -19,7 +21,8 @@
   },
   "Trap-Riddled Corridor": {
     "desc": "A long corridor stretches ahead, but the floor is covered in suspicious pressure plates and tripwires.",
-    "Choices": {
+    "id": "003",
+    "choices": {
       "F": "Attempt to disarm the traps skillfully.",
       "G": "Use a ranged weapon to trigger potential traps from a distance.",
       "H": "Search for an alternate route or secret passage.",

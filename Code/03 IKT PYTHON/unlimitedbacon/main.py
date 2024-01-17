@@ -1,13 +1,14 @@
 import json
 import random
+import uuid
 
 defaultChoices = [
     ["W", "Progress"],
     ["U", "Stats"],
-    ["I", "Inventory"]
-    # ["O", "Inventory"] Companion / pets
+    ["I", "Inventory"],
+    ["Q", "Exit game"]
+    # ["O", "Companion"] Companion / pets
 ]
-
 
 interactChoices = [
     ["F", "Check"],
@@ -31,7 +32,7 @@ def getChoiceKey(choiceList):
     return string
 
 
-def getChoice(choiceList):
+def getChoice(choiceList, eventID):
     print("Your choices are: \n" + formatChoices(choiceList))
     choice = str.lower(input("Enter your choice: "))
     choiceKeys = getChoiceKey(choiceList)
@@ -51,7 +52,7 @@ def action(interactionType):
     elif interactionType == 'u':
         return "action stats"
     elif interactionType == 'i':
-        return "action inventory"
+        return displayInventory(inventoryJSON)
     elif interactionType == 'f':
         return "action check"
     elif interactionType == 'g':
@@ -100,9 +101,43 @@ def removeFromInventory(inventory, itemID, amount):
     saveInventory()
 
 
+def displayInventory(inventory):
+    count = 1
+    f = open('./data/itemDatabase.json')
+    data = json.load(f)
+
+    print("\nYour inventory contains:")
+    for item in inventory:
+        print(f"({count}) {data[item]['name']}: {inventory[item]['amount']}")
+        print(f"    Description: {data[item]['desc']} \n")
+        count += 1
+
+
+def generateRandomEvent():
+    with open('./data/events.json', 'r') as file:
+        data = json.load(file)
+
+    random_key = random.choice(list(data.keys()))
+    random_event = data[random_key]
+
+    print(f"Description: {random_event['desc']}")
+    getChoice(interactChoices, random_event['id'])
+
+
 def startGame():
     print("Welcome to the game")
+    generateRandomEvent()
+    #getChoice(defaultChoices)
+
+    #while True:
+    #    generateRandomEvent()
+    #    getChoice(interactChoices)
 
 
 inventoryJSON = loadInventory()
-startGame()
+
+inp = input("Do you wish to enter the dungeon? y/n  ")
+if inp == "y":
+    startGame()
+else:
+    print("See you next time!")
