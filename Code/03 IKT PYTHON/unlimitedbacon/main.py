@@ -1,6 +1,5 @@
 import json
 import random
-import uuid
 
 defaultChoices = [
     ["W", "Progress"],
