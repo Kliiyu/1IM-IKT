@@ -5,7 +5,7 @@ from playsound import playsound
 
 mag = 7
 
-question = input("Hey kid, wanna try a game of russia roulette?, y/n to play!")
+question = input("Hey kid, wanna try a game of russian roulette?, y/n to play!")
 inp = question.lower()
 if inp == "y":
     badShot = num = random.randrange(1, 7)

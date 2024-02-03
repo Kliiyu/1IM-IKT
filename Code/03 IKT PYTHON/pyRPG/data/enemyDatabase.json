@@ -1,0 +1,23 @@
+{
+  "slime": {
+      "name": "Slime",
+      "desc": "Gooey mess",
+      "health": 10,
+      "rewardExp": [10,35],
+      "weapon": "none"
+    },
+  "jose": {
+      "name": "Jose",
+      "desc": "Jose",
+      "health": 1000,
+      "rewardExp": [10,35],
+      "weapon": "none"
+    },
+  "dwagon": {
+      "name": "Dwagon",
+      "desc": "rawr",
+      "health": 2000,
+      "rewardExp": [120,150],
+      "weapon": "ma_balls"
+    }
+}

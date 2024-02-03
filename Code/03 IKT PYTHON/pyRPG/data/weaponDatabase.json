@@ -1,0 +1,30 @@
+{
+  "none": {
+      "name": "None",
+      "desc": "Nothing",
+      "weaponType": "None",
+      "damage": 0,
+      "value": 0
+    },
+  "fists": {
+      "name": "Fists",
+      "desc": "yo hand",
+      "weaponType": "Blunt",
+      "damage": 2,
+      "value": 0
+    },
+  "sword": {
+      "name": "Sword",
+      "desc": "Sharp",
+      "weaponType": "Sword",
+      "damage": 5,
+      "value": 5
+    },
+  "ma_balls": {
+      "name": "Ma balls",
+      "desc": "Sharp",
+      "weaponType": "Mace",
+      "damage": 30,
+      "value": 1000
+    }
+}
