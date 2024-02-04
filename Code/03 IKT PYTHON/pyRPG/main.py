@@ -34,10 +34,10 @@ def drawInputs(inOne: str = '', inTwo: str = '', inThree: str = '', inFour: str 
     print()
 
 
-def basicInput(inBattle: bool = False, p: object = None, t: object = None):
+def basicInput(p, **kwargs):
     finished = False
 
-    drawInputs("Exit", "Save Game", "Quit Game")
+    drawInputs("Return", "Save Game", "Quit Game")
 
     def noClass():
         print("Class does not exist!", end="\r")
@@ -48,11 +48,12 @@ def basicInput(inBattle: bool = False, p: object = None, t: object = None):
         match str(input("# ")):
             case "1":
                 finished = True
-                if inBattle:
-                    if p is None or t is None:
-                        noClass()
-                        continue
-                    engageBattle(p, t)
+                if 'inBattle' in kwargs and kwargs.get('inBattle'):
+                    if 'target' in kwargs:
+                        if p is None or kwargs.get('target') is None:
+                            noClass()
+                            continue
+                        engageBattle(p, kwargs.get('target'))
                 else:
                     clearTerminal()
                     if p is None:
@@ -66,7 +67,6 @@ def basicInput(inBattle: bool = False, p: object = None, t: object = None):
                 clearLineUp()
                 continue
             case "3":
-                finished = True
                 clearTerminal()
                 sys.exit()
             case _:
@@ -76,18 +76,25 @@ def basicInput(inBattle: bool = False, p: object = None, t: object = None):
                 continue
 
 
-def endInput():
-    finished = False
-
+def endInput(p):
     drawInputs("Try again", "Quit Game")
 
-    while not finished:
+    while True:
         match str(input("# ")):
             case "1":
-                finished = True
-                run()
+                clearTerminal()
+                print("Goodluck in your next life!")
+                time.sleep(1)
+                print("\nRebirth in 3")
+                time.sleep(1)
+                clearLineUp()
+                print("Rebirth in 2")
+                time.sleep(1)
+                clearLineUp()
+                print("Rebirth in 1")
+                time.sleep(1)
+                return run()
             case "2":
-                finished = True
                 clearTerminal()
                 sys.exit()
             case _:
@@ -97,10 +104,16 @@ def endInput():
                 continue
 
 
-def battleAttack(p, t):
-    message1 = "\n" + p.attack(t)
-    message2 = t.attack(p)
-    engageBattle(p, t, True, message1, message2)
+def drawBattle(p, t):
+    clearTerminal()
+    asciiBanner("BATTLE", color="red")
+    print(f"xX---------------------------------xX")
+    print(f"Name: {p.name}")
+    p.healthBar.draw()
+    print("\n")
+    print(f"{t.name}")
+    t.healthBar.draw()
+    print(f"xX---------------------------------xX")
 
 
 def battleInput(p, t):
@@ -112,23 +125,47 @@ def battleInput(p, t):
         match str(input("# ")):
             case "1":
                 finished = True
-                battleAttack(p, t)
+
+                if p.speed >= t.speed:
+                    time.sleep(.3)
+                    message1 = "\n" + p.attack(t)
+                    drawBattle(p, t)
+                    print(message1)
+                    time.sleep(.7)
+                    message2 = t.attack(p)
+                    drawBattle(p, t)
+                    print(message1)
+                    print(message2)
+                else:
+                    time.sleep(.3)
+                    message2 = t.attack(p)
+                    drawBattle(p, t)
+                    print(message2)
+                    time.sleep(.7)
+                    message1 = "\n" + p.attack(t)
+                    drawBattle(p, t)
+                    print(message2)
+                    print(message1)
+
+                time.sleep(.7)
+                engageBattle(p, t, True, message1, message2)
             case "2":
                 finished = True
                 clearTerminal()
                 asciiBanner("Heal", color="green")
-                basicInput(True, p, t)
+                print(p.heal(10))
+                basicInput(p, target=t, inBattle=True)
             case "3":
                 finished = True
                 clearTerminal()
                 asciiBanner(p.name)
                 p.draw()
-                basicInput(True, p, t)
+                basicInput(p, target=t, inBattle=True)
             case "4":
                 finished = True
                 clearTerminal()
                 asciiBanner("Run", color="red")
-                basicInput(True, p, t)
+                basicInput(p, target=t, inBattle=True)
             case _:
                 print("Invalid input!", end="\r")
                 time.sleep(.7)
@@ -136,40 +173,27 @@ def battleInput(p, t):
                 continue
 
 
-def engageBattle(p, t, internal: bool = False, message1: str = '', message2: str = ''):
-    finished = False
+def engageBattle(p, t, internal: bool = False, *args: str):
+    drawBattle(p, t)
+    if internal:
+        for arg in args:
+            print(arg)
 
-    if not finished:
+    if t.health <= 0:
+        print("\nYou won the battle!")
+        expMessage = p.giveExp(exp=random.randint(t.rewardExp[0], t.rewardExp[1]))
+        print(expMessage + "\n")
+        time.sleep(2)
         clearTerminal()
-        asciiBanner("BATTLE", color="red")
+        del t
+        return
+    elif p.health <= 0:
+        clearTerminal()
+        asciiBanner("YOU DIED", color="red")
         print(f"xX---------------------------------xX")
-        print(f"Name: {p.name}")
-        p.healthBar.draw()
-        print("\n")
-        print(f"{t.name}")
-        t.healthBar.draw()
-        print(f"xX---------------------------------xX")
-        if internal:
-            print(message1)
-            print(message2)
-
-        if t.health <= 0:
-            finished = True
-            print("You won the battle!")
-            expMessage = p.giveExp(exp=random.randint(t.rewardExp[0], t.rewardExp[1]))
-            print(expMessage + "\n")
-            time.sleep(2)
-            clearTerminal()
-            del t
-            return
-        elif p.health <= 0:
-            finished = True
-            clearTerminal()
-            asciiBanner("YOU DIED", color="red")
-            print(f"xX---------------------------------xX")
-            endInput()
-        else:
-            battleInput(p, t)
+        endInput(p)
+    else:
+        battleInput(p, t)
 
 
 def getPlayerName():
@@ -218,20 +242,23 @@ def run():
 
     playerName = getPlayerName()
 
-    player = Player(name=playerName, health=100)
-    player.equip("sword")
+    player = Player(name=playerName, health=100, speed=10)
+    player.equip("ma_balls")
 
     while True:
         clearTerminal()
         player.draw()
 
-        engageBattle(player, getEnemy("dwagon"))
+        time.sleep(3)
+
+        engageBattle(player, getEnemy("slime"))
+        engageBattle(player, getEnemy("jose"))
 
         clearTerminal()
         basicInput(p=player)
         time.sleep(1)
 
-        endInput()
+        endInput(player)
 
 
 run()

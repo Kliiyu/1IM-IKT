@@ -9,11 +9,13 @@ class Character:
     def __init__(self,
                  name: str,
                  health: int,
+                 speed: int,
                  level: int = 1,
                  exp: int = 0):
         self.name = name
         self.health = health
         self.health_max = health
+        self.speed = speed
         self.level = level
         self.exp = exp
 
@@ -33,9 +35,10 @@ class Player(Character):
     def __init__(self,
                  name: str,
                  health: int,
+                 speed: int,
                  level: int = 1,
                  exp: int = 0) -> None:
-        super().__init__(name=name, health=health, level=level, exp=exp)
+        super().__init__(name=name, health=health, speed=speed, level=level, exp=exp)
 
         self.defaultWeapon = self.weapon
         self.healthBar = HealthBar(self, color="green")
@@ -59,16 +62,34 @@ class Player(Character):
         self.exp += exp
 
         oldLevel = self.level
-        while self.exp >= math.floor((self.expBase * self.level) ** self.expScale):
-            expToLevel = math.floor((self.expBase * self.level) ** self.expScale)
+
+        def expEquation() -> int:
+            return math.floor((self.expBase * self.level) ** self.expScale)
+
+        while self.exp >= expEquation():
+            expToLevel = expEquation()
             remainingExp = self.exp - expToLevel
             self.exp = 0 if remainingExp <= 0 else remainingExp
             self.level += 1
 
         if oldLevel != self.level:
-            return f"{self.name} leveled up from level {oldLevel} to level {self.level}! (+{exp} exp)"
+            return f"{self.name} leveled up from level {oldLevel} to level {self.level}!"
         else:
             return f"{self.name} gained {exp} exp!"
+
+    def heal(self, healAmount: int) -> str:
+        healed = healAmount
+        if self.health + healAmount >= self.health_max:
+            healed = self.health_max - self.health
+            self.health = self.health_max
+        else:
+            self.health += healAmount
+        self.healthBar.update()
+
+        if healed <= 0:
+            return f"{self.name} recovered no health points!"
+        else:
+            return f"{self.name} recovered {healed} health points!"
 
     def draw(self):
         print(f"xX---------------------------------xX")
@@ -80,8 +101,13 @@ class Player(Character):
 
 
 class Enemy(Character):
-    def __init__(self, name: str, health: int, rewardExp, weapon) -> None:
-        super().__init__(name=name, health=health)
+    def __init__(self,
+                 name: str,
+                 health: int,
+                 speed: int,
+                 rewardExp,
+                 weapon) -> None:
+        super().__init__(name=name, health=health, speed=speed)
 
         self.healthBar = HealthBar(self, color="red")
 
@@ -105,13 +131,14 @@ def getEnemy(name: str) -> Enemy | None:
             print(f"Enemy: {enemyName} does not exist! Defaulting to slime")
 
         enemyHealth = enemyName['health']
+        enemySpeed = enemyName['speed']
         enemyExp = enemyName['rewardExp']
         enemyWeapon = enemyName['weapon']
 
         enemy = Enemy(name=enemyName['name'],
                       health=enemyHealth,
+                      speed=enemySpeed,
                       rewardExp=enemyExp,
                       weapon=enemyWeapon)
 
         return enemy
-
