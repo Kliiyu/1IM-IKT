@@ -44,14 +44,15 @@ class HealthBar:
     def update(self) -> None:
         self.current_value = self.entity.health
 
-    def draw(self) -> None:
+    def draw(self, indent: int = 0) -> None:
         self.update()
         remaining_bars = round(self.current_value / self.max_value * self.length)
         lost_bars = self.length - remaining_bars
-        print(f"{self.entity.name}'s health: {self.color if self.is_colored else ''}"
+        indentSpace = '    '
+        print(f"{indent*indentSpace}{self.entity.name}'s health: {self.color if self.is_colored else ''}"
               f"{self.entity.health}/{self.entity.health_max}"
               f"{self.colors['default'] if self.is_colored else ''}")
-        print(f"{self.barrier}"
+        print(f"{indent*indentSpace}{self.barrier}"
               f"{self.color if self.is_colored else ''}"
               f"{remaining_bars * self.symbol_remaining}"
               f"{lost_bars * self.symbol_lost}"
@@ -70,14 +71,14 @@ class ExpBar:
                  length: int = 20,
                  is_colored: bool = True,
                  color: str = "") -> None:
-        f = open('./config/playerConfig.json')
-        data = json.load(f)
-
-        self.expBase = data['expBase']
-        self.expScale = data['expScale']
-
         self.entity = entity
         self.length = length
+
+        with open('./config/playerConfig.json') as f:
+            data = json.load(f)
+            self.expBase = data['expBase']
+            self.expScale = data['expScale']
+
         self.max_value = math.floor((self.expBase * entity.level) ** self.expScale)
         self.current_value = entity.exp
 

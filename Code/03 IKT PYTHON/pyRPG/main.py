@@ -5,7 +5,6 @@ import pyfiglet
 import time
 import sys
 from classes.entity import *
-from classes.weapon import *
 
 
 def clearTerminal(): return os.system('cls')
@@ -17,12 +16,13 @@ def clearLineUp():
     sys.stdout.write("\033[K")
 
 
-def asciiBanner(text):
-    return print(pyfiglet.figlet_format(str(text)))
+def asciiBanner(text: str = '', font: str = 'standard', color: str = 'white') -> None:
+    color = color.upper()
+    return pyfiglet.print_figlet(text=text, font=font, colors=color)
 
 
 def drawInputs(inOne: str = '', inTwo: str = '', inThree: str = '', inFour: str = ''):
-    print("Enter your action")
+    print("\nEnter your action")
     if inOne != '':
         print(f"    1: {inOne}")
     if inTwo != '':
@@ -34,19 +34,30 @@ def drawInputs(inOne: str = '', inTwo: str = '', inThree: str = '', inFour: str 
     print()
 
 
-def basicInput(inBattle, p, t=''):
+def basicInput(inBattle: bool = False, p: object = None, t: object = None):
     finished = False
 
     drawInputs("Exit", "Save Game", "Quit Game")
+
+    def noClass():
+        print("Class does not exist!", end="\r")
+        time.sleep(.7)
+        clearLineUp()
 
     while not finished:
         match str(input("# ")):
             case "1":
                 finished = True
                 if inBattle:
+                    if p is None or t is None:
+                        noClass()
+                        continue
                     engageBattle(p, t)
                 else:
                     clearTerminal()
+                    if p is None:
+                        noClass()
+                        continue
                     p.draw()
             case "2":
                 # Save game here
@@ -87,9 +98,9 @@ def endInput():
 
 
 def battleAttack(p, t):
-    message1 = p.attack(t)
+    message1 = "\n" + p.attack(t)
     message2 = t.attack(p)
-    engageBattle(p, t, True, message1, message2 + "\n")
+    engageBattle(p, t, True, message1, message2)
 
 
 def battleInput(p, t):
@@ -105,7 +116,7 @@ def battleInput(p, t):
             case "2":
                 finished = True
                 clearTerminal()
-                asciiBanner("Heal")
+                asciiBanner("Heal", color="green")
                 basicInput(True, p, t)
             case "3":
                 finished = True
@@ -116,7 +127,7 @@ def battleInput(p, t):
             case "4":
                 finished = True
                 clearTerminal()
-                asciiBanner("Run")
+                asciiBanner("Run", color="red")
                 basicInput(True, p, t)
             case _:
                 print("Invalid input!", end="\r")
@@ -130,14 +141,14 @@ def engageBattle(p, t, internal: bool = False, message1: str = '', message2: str
 
     if not finished:
         clearTerminal()
-        asciiBanner("BATTLE")
+        asciiBanner("BATTLE", color="red")
         print(f"xX---------------------------------xX")
         print(f"Name: {p.name}")
         p.healthBar.draw()
         print("\n")
-        print(f"Health: {t.name}")
+        print(f"{t.name}")
         t.healthBar.draw()
-        print(f"xX---------------------------------xX \n")
+        print(f"xX---------------------------------xX")
         if internal:
             print(message1)
             print(message2)
@@ -153,34 +164,15 @@ def engageBattle(p, t, internal: bool = False, message1: str = '', message2: str
             return
         elif p.health <= 0:
             finished = True
-            print("You died")
+            clearTerminal()
+            asciiBanner("YOU DIED", color="red")
+            print(f"xX---------------------------------xX")
             endInput()
         else:
             battleInput(p, t)
 
 
-def titleScreen():
-    print("""
-          
- .----------------.  .----------------.  .----------------.  .----------------.  .----------------.  .----------------. 
-| .--------------. || .--------------. || .--------------. || .--------------. || .--------------. || .--------------. |
-| | _____  _____ | || |  _________   | || |   _____      | || |     ______   | || | _____  _____ | || | ____    ____ | |
-| ||_   _||_   _|| || | |_   ___  |  | || |  |_   _|     | || |   .' ___  |  | || ||_   _||_   _|| || ||_   \  /   _|| |
-| |  | | /\ | |  | || |   | |_  \_|  | || |    | |       | || |  / .'   \_|  | || |  | |    | |  | || |  |   \/   |  | |
-| |  | |/  \| |  | || |   |  _|  _   | || |    | |   _   | || |  | |         | || |  | '    ' |  | || |  | |\  /| |  | |
-| |  |   /\   |  | || |  _| |___/ |  | || |   _| |__/ |  | || |  \ `.___.'\  | || |   \ `--' /   | || | _| |_\/_| |_ | |
-| |  |__/  \__|  | || | |_________|  | || |  |________|  | || |   `._____.'  | || |    `.__.'    | || ||_____||_____|| |
-| |              | || |              | || |              | || |              | || |              | || |              | |
-| '--------------' || '--------------' || '--------------' || '--------------' || '--------------' || '--------------' |
- '----------------'  '----------------'  '----------------'  '----------------'  '----------------'  '----------------' 
-
-          """)
-
-
-def run():
-    clearTerminal()
-    titleScreen()
-
+def getPlayerName():
     nameChosen = False
     nameCount = 0
     print("Enter your character's name:")
@@ -188,19 +180,43 @@ def run():
     playerName = ''
     while not nameChosen:
         playerName = str(input("# "))
-        if len(playerName) > 16 and nameCount >= 1:
-            print("Bitchass character limit is 16!", end="\r")
-            time.sleep(.7)
+        length = len(playerName)
+        if length > 16 and nameCount >= 1:
+            match nameCount:
+                case 1:
+                    print("CHARACTER LIMIT IS 16!", end="\r")
+                case 2:
+                    print("BITCHASS, CHARACTER LIMIT IS 16!", end="\r")
+            time.sleep(1)
+            clearLineUp()
+            nameCount += 1
+            continue
+        elif length > 16:
+            print("Character limit is 16!", end="\r")
+            time.sleep(1)
+            clearLineUp()
+            nameCount += 1
+            continue
+        elif length == 0:
+            print("This isn't No Game No Life, name your character!", end="\r")
+            time.sleep(1)
             clearLineUp()
             continue
-        elif len(playerName) > 16:
-            print("Character limit is 16!", end="\r")
-            nameCount += 1
-            time.sleep(.7)
+        elif length < 3:
+            print("Name must be at least 3 characters long!", end="\r")
+            time.sleep(1)
             clearLineUp()
             continue
         else:
             nameChosen = True
+            return playerName
+
+
+def run():
+    clearTerminal()
+    asciiBanner("WELCUM", "blocks")
+
+    playerName = getPlayerName()
 
     player = Player(name=playerName, health=100)
     player.equip("sword")
@@ -209,11 +225,13 @@ def run():
         clearTerminal()
         player.draw()
 
-        msg = engageBattle(player, getEnemy("slime"))
-        print(msg)
-
         engageBattle(player, getEnemy("dwagon"))
-        input()
+
+        clearTerminal()
+        basicInput(p=player)
+        time.sleep(1)
+
+        endInput()
 
 
 run()

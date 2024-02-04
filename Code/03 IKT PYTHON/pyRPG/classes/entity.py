@@ -24,7 +24,7 @@ class Character:
         target.health = max(target.health, 0)
         target.healthBar.update()
         if self.weapon.damage != 0:
-            return f"{self.name} did {self.weapon.damage} to {target.name} with {self.weapon.name}"
+            return f"{self.name} did {self.weapon.damage} damage to {target.name} with {self.weapon.name}"
         else:
             return f"{self.name} did no damage to {target.name}"
 
@@ -41,11 +41,11 @@ class Player(Character):
         self.healthBar = HealthBar(self, color="green")
         self.expBar = ExpBar(self, color="blue")
 
-        f = open('./config/playerConfig.json')
-        data = json.load(f)
+        with open('./config/playerConfig.json') as f:
+            data = json.load(f)
 
-        self.expBase = data['expBase']
-        self.expScale = data['expScale']
+            self.expBase = data['expBase']
+            self.expScale = data['expScale']
 
     def equip(self, weapon) -> None:
         self.weapon = getWeapon(weapon)
@@ -93,25 +93,25 @@ class Enemy(Character):
 
 
 def getEnemy(name: str) -> Enemy | None:
-    f = open('./data/enemyDatabase.json')
-    data = json.load(f)
+    with open('./data/enemyDatabase.json') as f:
+        data = json.load(f)
 
-    name = name.lower()
+        name = name.lower()
 
-    try:
-        enemyName = data[name]
-    except KeyError:
-        enemyName = data["slime"]
-        print(f"Enemy: {enemyName} does not exist! Defaulting to slime")
+        try:
+            enemyName = data[name]
+        except KeyError:
+            enemyName = data["slime"]
+            print(f"Enemy: {enemyName} does not exist! Defaulting to slime")
 
-    enemyHealth = enemyName['health']
-    enemyExp = enemyName['rewardExp']
-    enemyWeapon = enemyName['weapon']
+        enemyHealth = enemyName['health']
+        enemyExp = enemyName['rewardExp']
+        enemyWeapon = enemyName['weapon']
 
-    enemy = Enemy(name=enemyName['name'],
-                  health=enemyHealth,
-                  rewardExp=enemyExp,
-                  weapon=enemyWeapon)
+        enemy = Enemy(name=enemyName['name'],
+                      health=enemyHealth,
+                      rewardExp=enemyExp,
+                      weapon=enemyWeapon)
 
-    return enemy
+        return enemy
 
