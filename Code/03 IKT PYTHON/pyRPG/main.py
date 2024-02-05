@@ -1,5 +1,4 @@
 import os
-import random
 
 import pyfiglet
 import time
@@ -76,14 +75,14 @@ def basicInput(p, **kwargs):
                 continue
 
 
-def endInput(p):
+def endInput():
     drawInputs("Try again", "Quit Game")
 
     while True:
         match str(input("# ")):
             case "1":
                 clearTerminal()
-                print("Goodluck in your next life!")
+                print("Good luck in your next life!")
                 time.sleep(1)
                 print("\nRebirth in 3")
                 time.sleep(1)
@@ -191,7 +190,7 @@ def engageBattle(p, t, internal: bool = False, *args: str):
         clearTerminal()
         asciiBanner("YOU DIED", color="red")
         print(f"xX---------------------------------xX")
-        endInput(p)
+        endInput()
     else:
         battleInput(p, t)
 
@@ -201,7 +200,6 @@ def getPlayerName():
     nameCount = 0
     print("Enter your character's name:")
 
-    playerName = ''
     while not nameChosen:
         playerName = str(input("# "))
         length = len(playerName)
@@ -247,18 +245,16 @@ def run():
 
     while True:
         clearTerminal()
-        player.draw()
 
-        time.sleep(3)
-
-        engageBattle(player, getEnemy("slime"))
-        engageBattle(player, getEnemy("jose"))
+        for i in range(10):
+            engageBattle(player, getEnemy(biome="tropical_rainforest"))
 
         clearTerminal()
         basicInput(p=player)
         time.sleep(1)
 
-        endInput(player)
+        endInput()
 
 
-run()
+if __name__ == "__main__":
+    run()

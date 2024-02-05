@@ -1,5 +1,9 @@
 import json
 import math
+import random
+import inspect
+import sys
+import weighted_random
 
 from classes.weapon import *
 from classes.uibars import HealthBar, ExpBar
@@ -118,17 +122,51 @@ class Enemy(Character):
         self.healthBar.draw()
 
 
-def getEnemy(name: str) -> Enemy | None:
-    with open('./data/enemyDatabase.json') as f:
-        data = json.load(f)
+def getEnemy(**kwargs: str) -> Enemy | None:
+    caller_frame = inspect.currentframe().f_back
+    line_number = caller_frame.f_lineno
+    filename = caller_frame.f_code.co_filename
 
-        name = name.lower()
+    defaultEnemy = "slime"
 
-        try:
-            enemyName = data[name]
-        except KeyError:
-            enemyName = data["slime"]
-            print(f"Enemy: {enemyName} does not exist! Defaulting to slime")
+    with open('./data/enemyDatabase.json') as enemyDatabase:
+        dataEnemy = json.load(enemyDatabase)
+
+        if 'enemy' in kwargs and 'biome' in kwargs:
+            print(f"Please choose one of the following parameters: 'enemy' or 'biome' "
+                  f"\nFunction call from line {line_number}, file {filename}")
+            sys.exit()
+        elif 'enemy' in kwargs:
+            name = kwargs.get('enemy').lower()
+            try:
+                enemyName = dataEnemy[name]
+            except KeyError:
+                enemyName = dataEnemy[defaultEnemy]
+                print(f"Enemy: {enemyName} does not exist! Defaulting to {defaultEnemy}")
+        elif 'biome' in kwargs:
+            biome = kwargs.get('biome').lower()
+
+            with open('./data/biomesDatabase.json') as biomeDatabase:
+                dataBiome = json.load(biomeDatabase)
+
+                try:
+                    biomeName = dataBiome[biome]
+                except KeyError:
+                    biomeName = dataBiome['tropical_rainforest']
+                    print(f"Biome: {biomeName} does not exist! Defaulting to Tropical Rainforest")
+
+                monsters = biomeName['monsters']
+                selectedMonster = weighted_random.weightedRandom(monsters)
+
+                try:
+                    enemyName = dataEnemy[selectedMonster]
+                except KeyError:
+                    enemyName = dataEnemy[defaultEnemy]
+                    print(f"Enemy: {enemyName} does not exist! Defaulting to {defaultEnemy}")
+        else:
+            print(f"Please input valid parameter into function! "
+                  f"\nFunction called from line {line_number}, file {filename}")
+            sys.exit()
 
         enemyHealth = enemyName['health']
         enemySpeed = enemyName['speed']

@@ -4,9 +4,25 @@
       "desc": "Gooey mess",
       "health": 10,
       "speed": 0,
-      "rewardExp": [10,1000000],
+      "rewardExp": [10,35],
       "weapon": "none"
     },
+  "goblin": {
+      "name": "Goblin",
+      "desc": "goblo",
+      "health": 25,
+      "speed": 3,
+      "rewardExp": [15,40],
+      "weapon": "dagger"
+    },
+  "wolf": {
+    "name": "Wolf",
+    "desc": "Animal",
+    "health": 20,
+    "speed": 5,
+    "rewardExp": [20,50],
+    "weapon": "claws"
+  },
   "jose": {
       "name": "Jose",
       "desc": "Jose",

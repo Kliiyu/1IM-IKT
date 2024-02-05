@@ -1,0 +1,119 @@
+{
+  "tropical_rainforest":  {
+    "name": "Tropical Rainforest",
+    "north": "",
+    "south": "",
+    "west": "",
+    "east": "",
+    "monsters": {
+      "slime": 0.5,
+      "wolf": 0.3,
+      "goblin": 0.2
+    }
+  },
+  "Magical Enchanted Forest": {
+    "north": "",
+    "south": "",
+    "west": "",
+    "east": "",
+    "monsters": []
+  },
+  "Oasis": {
+    "north": "",
+    "south": "",
+    "west": "",
+    "east": "",
+    "monsters": []
+  },
+  "Rocky Desert": {
+    "north": "",
+    "south": "",
+    "west": "",
+    "east": "",
+    "monsters": []
+  },
+  "Sandy Desert": {
+    "north": "",
+    "south": "",
+    "west": "",
+    "east": "",
+    "monsters": []
+  },
+  "Snowy Mountains": {
+    "north": "",
+    "south": "",
+    "west": "",
+    "east": "",
+    "monsters": []
+  },
+  "Volcanic Mountains": {
+    "north": "",
+    "south": "",
+    "west": "",
+    "east": "",
+    "monsters": []
+  },
+  "Plains": {
+    "north": "",
+    "south": "",
+    "west": "",
+    "east": "",
+    "monsters": []
+  },
+  "Savannah": {
+    "north": "",
+    "south": "",
+    "west": "",
+    "east": "",
+    "monsters": []
+  },
+  "Tundra": {
+    "north": "",
+    "south": "",
+    "west": "",
+    "east": "",
+    "monsters": []
+  },
+  "Lost City Ruins": {
+    "north": "",
+    "south": "",
+    "west": "",
+    "east": "",
+    "monsters": []
+  },
+  "Dense Jungle": {
+    "north": "",
+    "south": "",
+    "west": "",
+    "east": "",
+    "monsters": []
+  },
+  "Elemental Plane": {
+    "north": "",
+    "south": "",
+    "west": "",
+    "east": "",
+    "monsters": []
+  },
+  "Abandoned Graveyard": {
+    "north": "",
+    "south": "",
+    "west": "",
+    "east": "",
+    "monsters": []
+  },
+  "Spooky Forest": {
+    "north": "",
+    "south": "",
+    "west": "",
+    "east": "",
+    "monsters": []
+  },
+  "Cursed Castle": {
+    "north": "",
+    "south": "",
+    "west": "",
+    "east": "",
+    "monsters": []
+  }
+}

@@ -13,11 +13,25 @@
       "damage": 2,
       "value": 0
     },
+  "claws": {
+      "name": "Claws",
+      "desc": "wolf's claws",
+      "weaponType": "Sharp",
+      "damage": 4,
+      "value": 0
+    },
+  "dagger": {
+      "name": "Dagger",
+      "desc": "goblin's dagger",
+      "weaponType": "Sharp",
+      "damage": 6,
+      "value": 2
+    },
   "sword": {
       "name": "Sword",
       "desc": "Sharp",
       "weaponType": "Sword",
-      "damage": 5,
+      "damage": 10,
       "value": 5
     },
   "ma_balls": {
