@@ -14,9 +14,10 @@ def clear_line_up():
     sys.stdout.write("\033[K")
 
 
-def get_user_choice(INPUT_ID: int):
+def get_user_choice(INPUT_ID: int, A_A: bool = False):
     """
     This function get user choice and returns user choice
+    :param A_A: AI watches anime or not
     :param INPUT_ID: if user choice decides between rock, paper, or scissors or unlimited and normal game mode,
     0 = game mode, 1 = watches anime, 2 = decide what to play, 3 = clear history
     :return: returns user choice
@@ -28,7 +29,7 @@ def get_user_choice(INPUT_ID: int):
             print("\nQuestion: Do you watch Anime? (y/n), or Q to quit: ")
         case 2:
             print("\nInput your choice: (rock, paper, scissors, lizard, spock) or Q to quit: ")
-            if AI_ANIME:
+            if A_A:
                 print("✅ AI watches Anime!")
             else:
                 print("❎ AI doesn't watch Anime!")
@@ -55,15 +56,14 @@ def determine_winner(USER_CHOICE, AI_CHOICE):  # 0: Tie, 1: User Wins, 2 AI wins
     return 2  # AI wins
 
 
-def most_probable_win():
+def most_probable_win(U_A, A_A, I_E):
     with open('plays.json', 'r') as file:
         data = json.load(file)
 
         sorted_data = sorted(data.items(), key=lambda x: x[1], reverse=True)
         reversed_combinations = {value: key for key, value in WINNING_COMBINATIONS}
 
-        n = 2
-        top_n = sorted_data[:n]
+        top_n = sorted_data[:2]
 
         def logic():
             if top_n[0][1] >= round(1.3 * top_n[1][1]):
@@ -74,7 +74,7 @@ def most_probable_win():
             beats_top_n = reversed_combinations.get(random_top_n[0])
 
             random_number = random.random()
-            if not USER_ANIME:
+            if not U_A:
                 if random_number <= .6:
                     return beats_top_n
                 else:
@@ -88,7 +88,12 @@ def most_probable_win():
                     return random.choice(CHOICES)
 
         random_number_anime = random.random()
-        if AI_ANIME:
+        if I_E:
+            if random_number_anime < .50:
+                return reversed_combinations.get('rock')
+            else:
+                return logic()
+        elif A_A:
             if random_number_anime < .50:
                 return 'scissors'
             else:
@@ -106,19 +111,27 @@ WINNING_COMBINATIONS = {
     ('spock', 'rock'), ('spock', 'scissors')
 }
 
-USER_SCORE = 0
-AI_SCORE = 0
-UNLIMITED = False
+_USER_SCORE = 0
+_AI_SCORE = 0
+_UNLIMITED = False
 
-USER_ANIME = False
-AI_ANIME = False
+_USER_ANIME = False
+_AI_ANIME = False
 
 
-def main():
-    global USER_SCORE, AI_SCORE, UNLIMITED, USER_ANIME, AI_ANIME
+def main(USER_SCORE, AI_SCORE, UNLIMITED, USER_ANIME, AI_ANIME):
+    IS_ENZO = False
+    print("Enter your name (Q to quit): ")
+    name = input("# ")
+    name_lower = name.lower()
+    match name_lower:
+        case 'enzo':
+            IS_ENZO = True
+        case 'q':
+            sys.exit()
 
     anime_random = random.random()
-    if anime_random < .5:
+    if anime_random < .25:
         AI_ANIME = True
 
     clear_terminal()
@@ -172,7 +185,7 @@ def main():
             sys.exit()
 
     while True:
-        user_input = get_user_choice(2)
+        user_input = get_user_choice(2, AI_ANIME)
         if user_input == 'q':
             break
 
@@ -180,11 +193,11 @@ def main():
             data = json.load(file)
             data[user_input] += 1
 
+        computer_choice = most_probable_win(USER_ANIME, AI_ANIME, IS_ENZO)
+        print(f'AI chooses: {computer_choice}')
+
         with open('plays.json', 'w') as file:
             json.dump(data, file)
-
-        computer_choice = most_probable_win()
-        print(f'AI chooses: {computer_choice}')
 
         outcome = determine_winner(user_input, computer_choice)
 
@@ -217,4 +230,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    main(_USER_SCORE, _AI_SCORE, _UNLIMITED, _USER_ANIME, _AI_ANIME)
