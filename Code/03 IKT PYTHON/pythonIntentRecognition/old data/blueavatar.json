@@ -1,0 +1,203 @@
+{
+  "intents": [
+    {
+      "tag": "sawfish",
+      "patterns": [
+        "what kind though"
+      ],
+      "responses": [
+        "sawfish? what kind though?"
+      ]
+    },
+    {
+      "tag": "bird flu",
+      "patterns": [
+        "bird flew?",
+        "bird flu"
+      ],
+      "responses": [
+        "bird flu? yeah they do that"
+      ]
+    },
+    {
+      "tag": "nacho cheese",
+      "patterns": [
+        "not your cheese",
+        "nacho cheese"
+      ],
+      "responses": [
+        "nacho cheese? then why are you eating it?"
+      ]
+    },
+    {
+      "tag": "manslaughter",
+      "patterns": [
+        "mans laughter",
+        "manslaughter"
+      ],
+      "responses": [
+        "manslaughter? yeah men can laugh"
+      ]
+    },
+    {
+      "tag": "t-shirt",
+      "patterns": [
+        "t-shirt",
+        "t shirt"
+      ],
+      "responses": [
+        "t-shirt? no, t letter"
+      ]
+    },
+    {
+      "tag": "banana bread",
+      "patterns": [
+        "banana bread?",
+        "bananabread"
+      ],
+      "responses": [
+        "banana bread? no, banana fruit"
+      ]
+    },
+    {
+      "tag": "handheld",
+      "patterns": [
+        "handheld"
+      ],
+      "responses": [
+        "handheld? yeah that's what they do"
+      ]
+    },
+    {
+      "tag": "angry birds",
+      "patterns": [
+        "angrybirds",
+        "angry birds"
+      ],
+      "responses": [
+        "angry birds? why are they so angry?"
+      ]
+    },
+    {
+      "tag": "cargo space",
+      "patterns": [
+        "cargo space?",
+        "cargospace"
+      ],
+      "responses": [
+        "cargo space? nah, car go road"
+      ]
+    },
+    {
+      "tag": "new zealand",
+      "patterns": [
+        "new zealand",
+        "nz",
+        "newzealand"
+      ],
+      "responses": [
+        "new zealand? no, quite old actually"
+      ]
+    },
+    {
+      "tag": "ubisoft",
+      "patterns": [
+        "you be soft",
+        "ubisoft"
+      ],
+      "responses": [
+        "ubisoft? i be hard"
+      ]
+    },
+    {
+      "tag": "fish sticks",
+      "patterns": [
+        "fish sticks?",
+        "fishsticks"
+      ],
+      "responses": [
+        "fish stick? yeah, if you throw it hard enough"
+      ]
+    },
+    {
+      "tag": "heavy metal",
+      "patterns": [
+        "heavy metal",
+        "heavymetal"
+      ],
+      "responses": [
+        "heavy metal? yes, it normally is"
+      ]
+    },
+    {
+      "tag": "son dried tomatoes",
+      "patterns": [
+        "sun dried tomatoes",
+        "son dired tomatoes",
+        "sun dried",
+        "sundried tomatoes",
+        "sun-dried tomatoes"
+      ],
+      "responses": [
+        "son dried tomatoes? i don't have any children"
+      ]
+    },
+    {
+      "tag": "peanut",
+      "patterns": [
+        "pee nut",
+        "peanut",
+        "pea nut"
+      ],
+      "responses": [
+        "peanut? at the same time?"
+      ]
+    },
+    {
+      "tag": "laundry",
+      "patterns": [
+        "laundry",
+        "lawn dry",
+        "dry lawn"
+      ],
+      "responses": [
+        "laundry? course it is, hasn't rained in weeks"
+      ]
+    },
+    {
+      "tag": "ww1",
+      "patterns": [
+        "world war 1",
+        "ww1"
+      ],
+      "responses": [
+        "world war 1? yes, it was"
+      ]
+    },
+    {
+      "tag": "dementia",
+      "patterns": [
+        "dementia",
+        "dementia",
+        "dementia",
+        "dementia",
+        "dementia",
+        "dementia",
+        "they met you"
+      ],
+      "responses": [
+        "dementia?... do you know who else suffers from dementia?... do you know who else suffers from dementia?... do you know who else suffers from dementia?..."
+      ]
+    },
+    {
+      "tag": "pistol",
+      "patterns": [
+        "piss toll",
+        "pistol"
+      ],
+      "responses": [
+        "piss toll? you have to pay to pee?"
+      ]
+    }
+  ]
+}

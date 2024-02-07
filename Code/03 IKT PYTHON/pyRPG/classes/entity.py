@@ -3,7 +3,6 @@ import math
 import random
 import inspect
 import sys
-import weighted_random
 
 from classes.weapon import *
 from classes.uibars import HealthBar, ExpBar
@@ -156,7 +155,11 @@ def getEnemy(**kwargs: str) -> Enemy | None:
                     print(f"Biome: {biomeName} does not exist! Defaulting to Tropical Rainforest")
 
                 monsters = biomeName['monsters']
-                selectedMonster = weighted_random.weightedRandom(monsters)
+
+                choices, weights = zip(*monsters.items())
+                totalWeight = sum(weights)
+                normalizedWeights = [w / totalWeight for w in weights]
+                selectedMonster = random.choices(choices, weights=normalizedWeights)[0]
 
                 try:
                     enemyName = dataEnemy[selectedMonster]

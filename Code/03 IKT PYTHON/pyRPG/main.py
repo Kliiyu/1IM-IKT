@@ -236,7 +236,10 @@ def getPlayerName():
 
 def run():
     clearTerminal()
-    asciiBanner("WELCUM", "blocks")
+    if random.random() < 0.05:
+        asciiBanner("WHALECUM", "blocks")
+    else:
+        asciiBanner("WELCUM", "blocks")
 
     playerName = getPlayerName()
 
