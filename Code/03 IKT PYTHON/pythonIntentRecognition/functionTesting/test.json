@@ -1,0 +1,7 @@
+{
+    "intents": {
+        "type": "greeting",
+        "responses": "hello",
+        "function": "\"\\u0080\\u0004\\u0095\\u0019\\u0000\\u0000\\u0000\\u0000\\u0000\\u0000\\u0000\\u008c\\b__main__\\u0094\\u008c\\bopen_img\\u0094\\u0093\\u0094.\""
+    }
+}
