@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="69d1d442-8bf3-4aa9-b944-1abf8436f284" name="Changes" comment="" />
+    <list default="true" id="69d1d442-8bf3-4aa9-b944-1abf8436f284" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../excelToPokemon/PokemonSet.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../excelToPokemon/PokemonSet.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../excelToPokemon/PokemonSet.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/../excelToPokemon/PokemonSet.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../excelToPokemon/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../excelToPokemon/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../excelToPokemon/template.json" beforeDir="false" afterPath="$PROJECT_DIR$/../excelToPokemon/template.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../excelToPokemon/test.json" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,6 +42,7 @@
     "Python.train.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -54,7 +61,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-50da183f06c8-2887949eec09-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-233.13135.95" />
+        <option value="bundled-python-sdk-5a2391486177-2887949eec09-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-233.13763.11" />
       </set>
     </attachedChunks>
   </component>
@@ -68,6 +75,7 @@
       <updated>1707294868563</updated>
       <workItem from="1707294881407" duration="891000" />
       <workItem from="1707297157950" duration="8146000" />
+      <workItem from="1707415430488" duration="704000" />
     </task>
     <servers />
   </component>
