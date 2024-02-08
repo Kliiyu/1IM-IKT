@@ -1,0 +1,30 @@
+{
+    "No. 1 - Cynthia": {
+        "name": "Cynthia",
+        "subname": "Cynthia",
+        "hitpoints": "100",
+        "typeId": 11,
+        "subtypeId": 1,
+        "variationId": null,
+        "rarityIconId": "Hyper Rare",
+        "illustrator": null,
+        "cardNumber": "1",
+        "totalInSet": "2",
+        "dexStats": "NO. 1  Trainer Pokemon  HT: 1 cm  WT: 1 kg.",
+        "Name": "Cynthia"
+    },
+    "No. 2 - Nemona": {
+        "name": "Nemona",
+        "subname": "Nemona",
+        "hitpoints": "200",
+        "typeId": 11,
+        "subtypeId": 1,
+        "variationId": null,
+        "rarityIconId": "Special Illustration Rare",
+        "illustrator": null,
+        "cardNumber": "2",
+        "totalInSet": "2",
+        "dexStats": "NO. 2  Pokemon Pokemon  HT: 5 cm  WT: 5 kg.",
+        "Name": "Nemona"
+    }
+}
