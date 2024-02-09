@@ -4,12 +4,45 @@ import sys
 import os
 import time
 import webbrowser
+import base64
 
 import pyperclip
 
 
 def clearTerminal():
     os.system('cls' if os.name == 'nt' else 'clear')
+
+
+templateJson = {
+    "name":"",
+    "subname":"",
+    "images":[],
+    "backgroundColor":"",
+    "cardNumber":"",
+    "totalInSet":"",
+    "hitpoints":10,
+    "illustrator":"",
+    "weaknessAmount":1,
+    "weaknessModifier":"",
+    "resistanceAmount":1,
+    "resistanceModifier":"",
+    "retreatCost":1,
+    "dexStats":"",
+    "dexEntry":"",
+    "customSetIconText":"",
+    "moves":[],
+    "baseSetId":4,
+    "supertypeId":1,
+    "typeId":1,
+    "subtypeId":1,
+    "weaknessTypeId":1,
+    "setIconId":1,
+    "rarityIconId":1,
+    "badgeIconId":0,
+    "flareIconId":0,
+    "rotationIconId":7,
+    "Name":""
+}
 
 
 baseSetIds = [
@@ -69,12 +102,12 @@ def formatPDValue(num, cat, cm, kg):
     return f"NO. {num}  {cat} Pokemon  HT: {cm} cm  WT: {kg} kg."
 
 
-def csv2jsonObj(path, templatePath):
+def csv2jsonObj(path, appending):
     data = {}
     
     idMappings = {}
     for idList in [baseSetIds, supertypeIds, typeIds, subtypeIds, variationIds, rarityIds, rarityIconIds]:
-        idMappings.update({name.lower(): str(val) for name, val in idList})
+        idMappings.update({name.lower(): val for name, val in idList})
     
     with open(path, encoding='utf-8-sig') as csvf:
         csvReader = csv.DictReader(csvf, delimiter=';')
@@ -82,6 +115,7 @@ def csv2jsonObj(path, templatePath):
         count = 0
         for row in csvReader:
             dexValues = []
+            emptyValues = []
             count += 1
 
             ignore = {'name', 'subname', 'prevolveName', 'illustrator'}
@@ -90,41 +124,45 @@ def csv2jsonObj(path, templatePath):
                     dexValues.append([name, row[name].lower()])
                 elif type(row[name]) == str and not name in ignore and not row[name].isdigit():
                     row[name] = idMappings.get(row[name].lower(), row[name])
+                    if row[name] == None or row[name] == "":
+                        emptyValues.append(name)
+
 
             row['dexStats'] = formatPDValue(dexValues[0][1], dexValues[1][1], dexValues[2][1], dexValues[3][1])
             for i in dexValues:
                 row.pop(i[0])
-            row['Name'] = row.get('name')
 
-            with open(jsonTemplatePath, 'r', encoding='utf-8') as templatef:
-                templateData = json.load(templatef)
+            for i in emptyValues:
+                row.pop(i)
 
             missingKeys = []
 
-            for key in templateData.keys():
+            for key in templateJson.keys():
                 if not key in row.keys():
                     missingKeys.append(key)
 
             for key in missingKeys:
-                row[key] = templateData[key]
+                row[key] = templateJson[key]
 
             try:
                 key = row.get('name')
             except ValueError:
                 print("Key 'Name' does not exist in the dictionary.")
+            
 
+            row['Name'] = row.get('name')
             data[f'No. {count} - {key}'] = row
          
         return data
 
 csvFilePath = r'PokemonSet.csv'
-jsonTemplatePath = r'template.json'
 outputPath = r'output.json'
 
 def main():
-    def update():
+    def update(appending: bool = False):
         timeBefore = time.time()
-        outputData = csv2jsonObj(csvFilePath, jsonTemplatePath)
+
+        outputData = csv2jsonObj(csvFilePath, appending)
 
         with open(outputPath, 'w', encoding='utf-8') as jsonf:
             jsonf.write(json.dumps(outputData, indent=4))
@@ -134,17 +172,19 @@ def main():
 
 
     while True:
-        print("\nUpdate data (u), Function mode (f)")
+        print("\nReset data ('reset'), Function mode ('f'))")
         inp = input("# ").lower()
         match inp:
-            case 'u':
-                update()
+            case 'reset':
+                update(appending=False)
+            case 'a':
+                update(appending=True)
             case 'f':
                 with open(outputPath, 'r', encoding='utf-8') as jsonf:
                     data = json.load(jsonf)
 
                     startStr = "\nWhat card number do you want to copy? (e.g. 35) || type [help] for commands"
-                    helpStr = "Enter [number] to pick card you want to copy to clipboard\n'u' to update JSON card database file\n'ls' to list all available cards\n'o' opens [https://pokecardmaker.net/creator] in default web browser\n'cls': clear terminal\n'b': go back\n'q': stop running\n\nnote: some functions only work in function mode\n"
+                    helpStr = "Enter [number] to pick card you want to copy to clipboard\n'reset' to update JSON card database file completly (deletes old images)\n'a' appends new lines to JSON card database file (keeps old images)\n'ls' to list all available cards\n'o' opens [https://pokecardmaker.net/creator] in default web browser\n'cls': clear terminal\n'b': go back\n'q': stop running\n\nnote: some functions only work in function mode\n"
 
                     clearTerminal()
                     print(helpStr)
@@ -157,6 +197,50 @@ def main():
                             for key in data.keys():
                                 keyNum = key.split(" ")[1]
                                 if int(keyNum) == int(inp):
+                                    with open(outputPath, 'r', encoding='utf-8') as dataf:
+                                        data = json.load(dataf)
+
+                                    if not len(data[key]['images']) > 0:
+                                        print(f"Selected: {key}")
+                                        print("\nDo you want to add an image? y/n")
+                                        inp = input("# ").lower()
+                                        if inp == 'y':
+                                            print("\nEnter image path: example/path/to/imagename.jpg")
+                                            path = input("# ")
+                                            normalizedPath = os.path.normpath(path.replace('"', ""))
+                                            try:
+                                                imagedata = {
+                                                    "id": f"{key}",
+                                                    "file": {},
+                                                    "src": "",
+                                                    "behindTemplate": True,
+                                                    "order": 1
+                                                }
+
+                                                with open(normalizedPath, 'rb') as imgf:
+                                                    encodedBytes = base64.b64encode(imgf.read())
+                                                    mimeType = "image/jpeg" 
+
+                                                    encodedString = encodedBytes.decode('utf-8')
+                                                    encodedString = f"data:{mimeType};base64,{encodedString}"
+
+                                                    imagedata['src'] = encodedString
+
+                                                    try:
+                                                        with open(outputPath, 'r', encoding='utf-8') as dataf:
+                                                            data = json.load(dataf)
+
+                                                        data[key]['images'].append(imagedata)
+
+                                                        with open(outputPath, 'w', encoding='utf-8') as dataf:
+                                                            json.dump(data, dataf, ensure_ascii=False, indent=4)
+                                                    except Exception as e:
+                                                        print("An error occurred while appending to images:", e)
+                                            except FileNotFoundError:
+                                                print("File not found! Consider adding image manually")
+                                            except Exception as e:
+                                                print("An error occurred while loading file:", e)
+
                                     jsonString = json.dumps(data[key], indent=4)
                                     pyperclip.copy(jsonString)
                                     print(f"Copied card [{key}] to clipboard!")
@@ -183,8 +267,10 @@ def main():
                             print(helpStr)
                             print(startStr)
                             continue
-                        elif inp == 'u':
-                            update()
+                        elif inp == 'a':
+                            update(appending=True)
+                        elif inp == 'reset':
+                            update(appending=False)
                         elif inp == 'o':
                             try:
                                 webbrowser.open('https://pokecardmaker.net/creator')
