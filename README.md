@@ -20,6 +20,8 @@ Using GitHub for managing my school work code offers several advantages:
 
 The repository is organized into folders based on the courses or subjects I'm studying. Within each folder, you'll find subfolders or individual files corresponding to specific assignments, projects, or topics. I strive to maintain clear and descriptive naming conventions to make navigation easier.
 
+*Please note:* Some and most of the content may be in Norwegian because it's my native language.
+
 ## How to Use
 
 Feel free to explore the repository and check out the code I've written. If you're a fellow student, you might find it helpful for reference or inspiration for your own projects. If you're an instructor or researcher, please respect the academic integrity policies and avoid directly copying or plagiarizing any code.
