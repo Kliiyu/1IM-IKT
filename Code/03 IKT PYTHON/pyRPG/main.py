@@ -1,8 +1,10 @@
 import os
-
-import pyfiglet
 import time
 import sys
+
+import pyfiglet
+import pygame
+
 from classes.entity import *
 
 
@@ -18,6 +20,12 @@ def clearLineUp():
 def asciiBanner(text: str = '', font: str = 'standard', color: str = 'white') -> None:
     color = color.upper()
     return pyfiglet.print_figlet(text=text, font=font, colors=color)
+
+
+def playSound(path):
+    pygame.mixer.init()
+    pygame.mixer.music.load(path)
+    pygame.mixer.music.play(-1) 
 
 
 def drawInputs(inOne: str = '', inTwo: str = '', inThree: str = '', inFour: str = ''):
@@ -124,6 +132,8 @@ def battleInput(p, t):
         match str(input("# ")):
             case "1":
                 finished = True
+                message1 = ""
+                message2 = ""
 
                 if p.speed >= t.speed:
                     time.sleep(.3)
@@ -131,20 +141,22 @@ def battleInput(p, t):
                     drawBattle(p, t)
                     print(message1)
                     time.sleep(.7)
-                    message2 = t.attack(p)
-                    drawBattle(p, t)
-                    print(message1)
-                    print(message2)
+                    if not t.health <= 0:
+                        message2 = t.attack(p)
+                        drawBattle(p, t)
+                        print(message1)
+                        print(message2)
                 else:
                     time.sleep(.3)
                     message2 = t.attack(p)
                     drawBattle(p, t)
                     print(message2)
                     time.sleep(.7)
-                    message1 = "\n" + p.attack(t)
-                    drawBattle(p, t)
-                    print(message2)
-                    print(message1)
+                    if not p.health <= 0:
+                        message1 = "\n" + p.attack(t)
+                        drawBattle(p, t)
+                        print(message2)
+                        print(message1)
 
                 time.sleep(.7)
                 engageBattle(p, t, True, message1, message2)
@@ -236,6 +248,9 @@ def getPlayerName():
 
 def run():
     clearTerminal()
+    
+    #playSound("soundtest.mp3")
+    
     if random.random() < 0.05:
         asciiBanner("WHALECUM", "blocks")
     else:
