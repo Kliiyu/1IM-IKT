@@ -3,7 +3,7 @@ import time
 import sys
 
 import pyfiglet
-import pygame
+from pygame import mixer
 
 from classes.entity import *
 
@@ -23,9 +23,9 @@ def asciiBanner(text: str = '', font: str = 'standard', color: str = 'white') ->
 
 
 def playSound(path):
-    pygame.mixer.init()
-    pygame.mixer.music.load(path)
-    pygame.mixer.music.play(-1) 
+    mixer.init()
+    mixer.music.load(path)
+    mixer.music.play(-1) 
 
 
 def drawInputs(inOne: str = '', inTwo: str = '', inThree: str = '', inFour: str = ''):
