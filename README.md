@@ -24,7 +24,7 @@ The repository is organized into folders based on the courses or subjects I'm st
 
 ## How to Use
 
-Feel free to explore the repository and check out the code I've written. If you're a fellow student, you might find it helpful for reference or inspiration for your own projects. If you're an instructor or researcher, please respect the academic integrity policies and avoid directly copying or plagiarizing any code.
+Feel free to explore the repository and check out the code I've written. If you're a fellow student, you might find it helpful for reference or inspiration for your own projects. 
 
 If you have any questions, suggestions, or feedback, don't hesitate to reach out. I'm open to collaboration and constructive criticism.
 
