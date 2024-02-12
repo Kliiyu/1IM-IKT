@@ -4,8 +4,8 @@ import random
 import inspect
 import sys
 
-from classes.weapon import *
-from classes.uibars import HealthBar, ExpBar
+from weapon import *
+from uibars import HealthBar, ExpBar
 
 
 class Character:
