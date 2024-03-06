@@ -2,9 +2,9 @@ import random
 
 def chooseWord():
     try:
-        with open('words.txt', 'r') as wordList:
+        with open(r'words.txt', 'r') as wordList:
             words = wordList.read().splitlines()
-            return random.choice(words)
+            return random.choice(words).lower()
     except FileNotFoundError:
         print("Error: words.txt file not found.")
         exit(1)
@@ -96,6 +96,7 @@ def hangman():
 
     print("Welcome to Hangman!")
     print(displayWord(word, guessedLetters))
+    print(word)
 
     while True:
         guess = input("Guess a letter: ").lower()
